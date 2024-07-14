@@ -8,7 +8,6 @@ function Home() {
   return (
     <div className={classes.container}>
       <Menu />
-      <h1>Hello world</h1>
     </div>
   );
 }
