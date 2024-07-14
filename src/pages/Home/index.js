@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import { Banner, BannerOutline, ProductGroupTitle } from 'components';
+import { Banner, BannerOutline, ProductGroupTitle, Spacing } from 'components';
 import useStyles from './styles';
-import { list1, list4 } from './mocks';
+import { list1, list4, groupList } from './mocks';
 import ProductCard from './ProductCard';
+import GroupCard from './GroupCard';
 
 function Home() {
   const classes = useStyles();
@@ -22,6 +23,12 @@ function Home() {
           View all
         </Button>
       </div>
+      <div className={classes.listGroup}>
+        {groupList.map((group) => (
+          <GroupCard key={group.groupName} {...group} />
+        ))}
+      </div>
+      <Spacing size={48} />
       <BannerOutline />
       <ProductGroupTitle title="VITAMINS & NUTRITRION" />
       <div className={classes.listItem}>

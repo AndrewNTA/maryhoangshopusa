@@ -29,7 +29,27 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-
+  listGroup: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '48px',
+    boxSizing: 'border-box',
+    [theme.breakpoints.down('md')]: {
+      gap: '18px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      gap: 0,
+    },
+    '&>*': {
+      flex: '0 0 calc(33.3333% - 32px)',
+      boxSizing: 'border-box',
+      [theme.breakpoints.down('sm')]: {
+        flex: 'unset',
+        width: '100%',
+        marginBottom: '24px'
+      },
+    },
+  },
   // Product Card
   priceWrapper: {
     display: 'flex',
