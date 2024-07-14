@@ -56,6 +56,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     gap: '12px',
     padding: '32px',
+    [theme.breakpoints.down('md')]: {
+      gap: '8px',
+      padding: '24px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      gap: '6px',
+      padding: '16px',
+    },
   },
   // search bar end
 
@@ -63,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
   bannerWrapper: {
     display: 'flex',
     padding: '32px',
+    [theme.breakpoints.down('md')]: {
+      padding: '24px',
+    },
     [theme.breakpoints.down('sm')]: {
       padding: '16px',
       flexWrap: 'wrap',
@@ -75,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       height: '240px',
       borderRadius: '8px 8px 0 0',
-      objectFit: 'cover'
+      objectFit: 'cover',
     },
   },
   bannerContent: {

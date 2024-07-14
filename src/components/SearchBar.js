@@ -3,9 +3,12 @@ import IconButton from '@mui/material/IconButton';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import TextField from '@mui/material/TextField';
 import useStyles from './styles';
+import { isPhoneScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 
 const SearchBar = ({ onClose }) => {
   const classes = useStyles();
+  const currentWidth = useCurrentWidth();
+  const isPhone = isPhoneScreen(currentWidth);
 
   return (
     <div className={classes.searchWrapper}>
@@ -14,6 +17,7 @@ const SearchBar = ({ onClose }) => {
         label="Search"
         type="search"
         sx={{ flex: 1 }}
+        size={isPhone ? 'small' : 'medium'}
       />
       <IconButton
         edge="end"
@@ -23,10 +27,13 @@ const SearchBar = ({ onClose }) => {
       >
         <CloseRoundedIcon
           fontSize="large"
-          sx={{
+          sx={(theme) => ({
             color: 'rgba(0,0,0,0.6)',
             fontSize: '1.9rem',
-          }}
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '1.4rem',
+            },
+          })}
         />
       </IconButton>
     </div>
