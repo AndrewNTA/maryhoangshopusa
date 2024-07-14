@@ -1,1 +1,1 @@
-export const DATA = "DATA";
+export const WEBSITE_NAME = "Mary Hoang Shop USA";

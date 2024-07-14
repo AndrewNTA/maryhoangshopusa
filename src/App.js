@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import theme from './theme';
+import './scss/index.scss';
 
 function App() {
   return (

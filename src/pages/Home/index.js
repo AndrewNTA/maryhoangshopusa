@@ -1,4 +1,5 @@
 import React from 'react';
+import { Menu } from 'components';
 import useStyles from './styles';
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
 
   return (
     <div className={classes.container}>
+      <Menu />
       <h1>Hello world</h1>
     </div>
   );
