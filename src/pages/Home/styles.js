@@ -36,6 +36,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '8px',
   },
+
+  // View All
+  viewAllContainer: {
+    margin: '20px 0',
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }));
 
 export default useStyles;
