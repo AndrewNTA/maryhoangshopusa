@@ -1,13 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import theme from './theme';
-import './scss/index.scss';
+import Container from '@mui/material/Container';
+
+import Home from 'pages/Home';
+import NotFound from 'pages/NotFound';
+import SaleoffProducts from 'pages/SaleoffProducts';
+import ProductDetails from 'pages/ProductDetails';
 import { Menu, Footer } from 'components';
 import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
-import Container from '@mui/material/Container';
+import theme from './theme';
+import './scss/index.scss';
 
 function App() {
   const currentWidth = useCurrentWidth();
@@ -32,6 +35,8 @@ function App() {
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" exact element={<Home />} />
+            <Route path="/saleoff" element={<SaleoffProducts />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
           </Routes>
         </div>
         <Footer />

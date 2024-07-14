@@ -150,11 +150,15 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     backgroundColor: 'var(--mary--main-color)',
     padding: '2.5rem 3rem',
+    margin: '4rem 32px 0 32px',
     marginTop: '4rem',
     fontSize: '1rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '4rem 0 0 0',
+    },
     [theme.breakpoints.down('sm')]: {
       padding: '16px',
-      marginTop: '2rem',
+      margin: '2rem 0 0 0',
       fontSize: '0.875rem',
     },
   },

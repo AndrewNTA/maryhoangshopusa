@@ -97,6 +97,31 @@ const product10 = {
   productDiscountPrice: '29',
 };
 
+const product11 = {
+  imageSrc: SkinImage,
+  productName: 'Radiance Pure Radiance',
+  productPrice: '18',
+  productDiscountPrice: '16',
+};
+const product12 = {
+  imageSrc: HairImage,
+  productName: 'Perfect Brow Kit',
+  productPrice: '12',
+  productDiscountPrice: '10',
+};
+const product13 = {
+  imageSrc: BodyImage,
+  productName: 'Nourishing HydraBoost Cream',
+  productPrice: '29',
+  productDiscountPrice: '25',
+};
+const product14 = {
+  imageSrc: Image6,
+  productName: 'Silk Finish Cream',
+  productPrice: '22',
+  productDiscountPrice: '15',
+};
+
 export const list1 = [
   product1,
   product2,
@@ -108,6 +133,10 @@ export const list1 = [
   product8,
 ];
 export const list2 = [
+  product13,
+  product11,
+  product12,
+  product14,
   product10,
   product8,
   product9,

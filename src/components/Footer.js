@@ -14,17 +14,17 @@ function Footer() {
       <div className={classes.footerBox}>
         <List className={classes.footerBoxItem}>
           {listItem.map((text) => (
-            <ListItem
-              key={text}
-              sx={{
-                cursor: 'pointer',
-                '&:hover': {
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '.3rem',
-                },
-              }}
-            >
-              <ListItemText primary={text} />
+            <ListItem key={text}>
+              <ListItemText
+                primary={text}
+                sx={{
+                  cursor: 'pointer',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '.3rem',
+                  },
+                }}
+              />
             </ListItem>
           ))}
         </List>
