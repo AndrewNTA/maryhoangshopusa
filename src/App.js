@@ -5,14 +5,25 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import theme from './theme';
 import './scss/index.scss';
+import { Menu } from 'components';
+import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 
 function App() {
+  const currentWidth = useCurrentWidth();
+  const isMobile = isMobileScreen(currentWidth);
   return (
     <ThemeProvider theme={theme}>
-      <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" exact element={<Home />} />
-      </Routes>
+      <Menu />
+      <div
+        style={{
+          paddingTop: isMobile ? '110px' : 0,
+        }}
+      >
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" exact element={<Home />} />
+        </Routes>
+      </div>
     </ThemeProvider>
   );
 }

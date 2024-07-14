@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -12,11 +12,36 @@ import ListItemText from '@mui/material/ListItemText';
 import { WEBSITE_NAME, menuItems } from 'constants';
 import { Spacing, SearchBar } from 'components';
 import useStyles from './styles';
+import { FREE_SHIPPING_MESSAGE } from 'constants';
 
 const MobileMenu = () => {
   const classes = useStyles();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = useCallback(() => {
+    if (window.scrollY > lastScrollY) {
+      // if scroll down hide the navbar
+      setShow(false);
+    } else {
+      // if scroll up show the navbar
+      setShow(true);
+    }
+
+    // remember current page location to use in the next move
+    setLastScrollY(window.scrollY);
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', controlNavbar);
+
+    // cleanup function
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [controlNavbar, lastScrollY]);
 
   const toggleMenu = (open) => () => {
     setMenuOpen(open);
@@ -44,7 +69,15 @@ const MobileMenu = () => {
   );
 
   return (
-    <div className={classes.mobileMenuWrapper}>
+    <div
+      className={classes.mobileMenuWrapper}
+      style={{
+        visibility: show ? 'visible' : 'hidden',
+        opacity: show ? 1 : 0,
+        transition: 'visibility 0.2s, opacity 0.2s linear',
+      }}
+    >
+      <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
       <AppBar position="static">
         <Toolbar>
           <IconButton

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Banner } from 'components';
+import { Banner } from 'components';
 import useStyles from './styles';
 
 function Home() {
@@ -7,8 +7,8 @@ function Home() {
 
   return (
     <div className={classes.container}>
-      <Menu />
       <Banner />
+      <div style={{ height: '1200px' }} />
     </div>
   );
 }

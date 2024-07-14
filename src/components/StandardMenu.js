@@ -8,6 +8,7 @@ import Drawer from '@mui/material/Drawer';
 import { WEBSITE_NAME, menuItems } from 'constants';
 import { SearchBar } from 'components';
 import useStyles from './styles';
+import { FREE_SHIPPING_MESSAGE } from 'constants';
 
 const StandardMenu = () => {
   const classes = useStyles();
@@ -18,7 +19,8 @@ const StandardMenu = () => {
   };
 
   return (
-    <div className={classes.mobileMenuWrapper}>
+    <div className={classes.standardMenuWrapper}>
+      <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
       <AppBar position="static">
         <Toolbar sx={{ padding: '12px 32px !important' }}>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
