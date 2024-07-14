@@ -35,7 +35,30 @@ function App() {
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" exact element={<Home />} />
-            <Route path="/saleoff" element={<SaleoffProducts />} />
+            <Route
+              path="/all-products"
+              element={<SaleoffProducts key="all-products" />}
+            />
+            <Route
+              path="/saleoff"
+              element={<SaleoffProducts key="saleoff" />}
+            />
+            <Route
+              path="/body-care"
+              element={<SaleoffProducts key="body-care" />}
+            />
+            <Route
+              path="/hair-care"
+              element={<SaleoffProducts key="hair-care" />}
+            />
+            <Route
+              path="/skin-care-makeup"
+              element={<SaleoffProducts key="skin-care-makeup" />}
+            />
+            <Route
+              path="/vitamins-nutrition"
+              element={<SaleoffProducts key="vitamins-nutrition" />}
+            />
             <Route path="/products/:id" element={<ProductDetails />} />
           </Routes>
         </div>

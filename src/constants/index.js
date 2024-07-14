@@ -2,13 +2,41 @@ export const WEBSITE_NAME = 'MARY HOANG SHOP USA';
 export const FREE_SHIPPING_MESSAGE = 'FREE SHIPPING FOR ALL STATES';
 
 export const menuItems = [
-  'Home',
-  'All products',
-  'Skin Care & Makeup',
-  'Body Care',
-  'Hair Care',
-  'Vitamins & Nutrition',
-  'SALEOFF',
+  {
+    id: 'home',
+    path: '/',
+    label: 'Home',
+  },
+  {
+    id: 'all-products',
+    path: '/all-products',
+    label: 'All products',
+  },
+  {
+    id: 'skin-care-makeup',
+    path: '/skin-care-makeup',
+    label: 'Skin Care & Makeup',
+  },
+  {
+    id: 'body-care',
+    path: '/body-care',
+    label: 'Body Care',
+  },
+  {
+    id: 'hair-care',
+    path: '/hair-care',
+    label: 'Hair Care',
+  },
+  {
+    id: 'vitamins-nutrition',
+    path: '/vitamins-nutrition',
+    label: 'Vitamins & Nutrition',
+  },
+  {
+    id: 'saleoff',
+    path: '/saleoff',
+    label: 'SALEOFF',
+  },
 ];
 
 export const contactItems = [

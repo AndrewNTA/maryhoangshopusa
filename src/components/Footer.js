@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -7,16 +8,21 @@ import useStyles from './styles';
 
 function Footer() {
   const classes = useStyles();
+  const navigate = useNavigate();
   const listItem = menuItems.slice(1, 6);
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className={classes.footerWrapper}>
       <div className={classes.footerBox}>
         <List className={classes.footerBoxItem}>
-          {listItem.map((text) => (
-            <ListItem key={text}>
+          {listItem.map((item) => (
+            <ListItem key={item.id}>
               <ListItemText
-                primary={text}
+                primary={item.label}
                 sx={{
                   cursor: 'pointer',
                   '&:hover': {
@@ -24,6 +30,7 @@ function Footer() {
                     textUnderlineOffset: '.3rem',
                   },
                 }}
+                onClick={() => handleNavigate(item.path)}
               />
             </ListItem>
           ))}

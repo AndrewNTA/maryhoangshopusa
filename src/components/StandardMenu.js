@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -11,17 +12,26 @@ import useStyles from './styles';
 
 const StandardMenu = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [searchOpen, setSearchOpen] = useState(false);
 
   const toggleSearch = (open) => () => {
     setSearchOpen(open);
   };
 
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className={classes.standardMenuWrapper}>
       <AppBar position="static">
         <Toolbar sx={{ padding: '12px 32px !important' }}>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            style={{ flexGrow: 1, cursor: 'pointer' }}
+            onClick={() => handleNavigate('/')}
+          >
             {WEBSITE_NAME}
           </Typography>
           <IconButton
@@ -34,9 +44,13 @@ const StandardMenu = () => {
           </IconButton>
         </Toolbar>
         <div className={classes.menuListItem}>
-          {menuItems.map((text) => (
-            <span key={text} className={classes.menuItem}>
-              {text}
+          {menuItems.map((item) => (
+            <span
+              key={item.id}
+              className={classes.menuItem}
+              onClick={() => handleNavigate(item.path)}
+            >
+              {item.label}
             </span>
           ))}
         </div>
@@ -44,7 +58,7 @@ const StandardMenu = () => {
       <Drawer anchor="top" open={searchOpen} onClose={toggleSearch(false)}>
         <SearchBar onClose={toggleSearch(false)} />
       </Drawer>
-    </div >
+    </div>
   );
 };
 

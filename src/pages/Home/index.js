@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { Banner, BannerOutline, ProductGroupTitle, Spacing } from 'components';
 import useStyles from './styles';
@@ -8,6 +8,13 @@ import GroupCard from './GroupCard';
 
 function Home() {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
 
   return (
     <div className={classes.container}>

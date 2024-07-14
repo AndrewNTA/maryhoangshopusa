@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -15,6 +16,7 @@ import useStyles from './styles';
 
 const MobileMenu = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -26,6 +28,10 @@ const MobileMenu = () => {
     setSearchOpen(open);
   };
 
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   const list = () => (
     <div
       role="presentation"
@@ -34,9 +40,12 @@ const MobileMenu = () => {
       className={classes.mobileMenuListItem}
     >
       <List>
-        {menuItems.map((text) => (
-          <ListItem key={text}>
-            <ListItemText primary={text} />
+        {menuItems.map((item) => (
+          <ListItem key={item.id}>
+            <ListItemText
+              primary={item.label}
+              onClick={() => handleNavigate(item.path)}
+            />
           </ListItem>
         ))}
       </List>
@@ -63,6 +72,7 @@ const MobileMenu = () => {
                 fontSize: '0.9rem',
               },
             })}
+            onClick={() => handleNavigate('/')}
           >
             {WEBSITE_NAME}
           </Typography>
