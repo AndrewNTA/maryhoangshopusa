@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'static/images/banner-img.jpg';
@@ -6,6 +7,11 @@ import useStyles from './styles';
 
 function Banner() {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className={classes.bannerWrapper}>
@@ -44,7 +50,12 @@ function Banner() {
           >
             where beauty meets elegance
           </Typography>
-          <Button variant="outlined" color="white" size="large">
+          <Button
+            variant="outlined"
+            color="white"
+            size="large"
+            onClick={() => handleNavigate('/all-products')}
+          >
             Shop now
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -13,10 +14,18 @@ export default function ProductCard({
   productDiscountPrice,
 }) {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   const price = productDiscountPrice ? productDiscountPrice : productPrice;
   return (
-    <Card sx={{ cursor: 'pointer' }}>
+    <Card
+      sx={{ cursor: 'pointer' }}
+      onClick={() => handleNavigate('/products/1')}
+    >
       <CardMedia
         sx={(theme) => ({
           height: 260,

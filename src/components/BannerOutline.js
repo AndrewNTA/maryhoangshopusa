@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'static/images/banner-outline-img.jpg';
@@ -6,6 +7,11 @@ import useStyles from './styles';
 
 function BannerOutline() {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className={classes.bannerWrapper}>
@@ -43,7 +49,12 @@ function BannerOutline() {
           >
             cam kết chính hãng
           </Typography>
-          <Button variant="outlined" color="primary" size="large">
+          <Button
+            variant="outlined"
+            color="primary"
+            size="large"
+            onClick={() => handleNavigate('/vitamins-nutrition')}
+          >
             Shop now
           </Button>
         </div>

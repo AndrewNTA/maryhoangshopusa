@@ -15,6 +15,7 @@ import SkinImage from 'static/images/skin-care-img.jpg';
 
 const bodyGroup = {
   imageSrc: BodyImage,
+  path: '/body-care',
   groupName: 'Body Care',
   groupDescription:
     'Pamper your skin with our exquisite range of body care products.',
@@ -22,6 +23,7 @@ const bodyGroup = {
 
 const hairGroup = {
   imageSrc: HairImage,
+  path: '/hair-care',
   groupName: 'Hair Care',
   groupDescription:
     'Discover the secret to luscious, healthy hair with our exceptional range of hair care products.',
@@ -29,6 +31,7 @@ const hairGroup = {
 
 const skinGroup = {
   imageSrc: SkinImage,
+  path: '/skin-care-makeup',
   groupName: 'Skin Care & Makeup',
   groupDescription:
     'Unleash your creativity with our exquisite makeup collection.',

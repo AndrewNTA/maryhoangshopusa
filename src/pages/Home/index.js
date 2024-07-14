@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { Banner, BannerOutline, ProductGroupTitle, Spacing } from 'components';
 import useStyles from './styles';
@@ -8,6 +9,11 @@ import GroupCard from './GroupCard';
 
 function Home() {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   useEffect(() => {
     window.scrollTo({
@@ -26,7 +32,12 @@ function Home() {
         ))}
       </div>
       <div className={classes.viewAllContainer}>
-        <Button variant="contained" color="primary" size="large">
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={() => handleNavigate('/saleoff')}
+        >
           View all
         </Button>
       </div>
@@ -44,7 +55,12 @@ function Home() {
         ))}
       </div>
       <div className={classes.viewAllContainer}>
-        <Button variant="outlined" color="primary" size="large">
+        <Button
+          variant="outlined"
+          color="primary"
+          size="large"
+          onClick={() => handleNavigate('/vitamins-nutrition')}
+        >
           View all
         </Button>
       </div>
