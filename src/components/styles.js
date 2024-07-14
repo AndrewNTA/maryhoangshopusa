@@ -83,13 +83,13 @@ const useStyles = makeStyles((theme) => ({
   // banner start
   bannerWrapper: {
     display: 'flex',
-    padding: '32px',
+    flexWrap: 'wrap',
+    paddingBottom: '32px',
     [theme.breakpoints.down('md')]: {
-      padding: '24px',
+      paddingBottom: '24px',
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '16px',
-      flexWrap: 'wrap',
+      paddingBottom: '16px',
     },
   },
   bannerImg: {

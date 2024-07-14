@@ -1,6 +1,9 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
 import { Banner } from 'components';
 import useStyles from './styles';
+import { list1 } from './mocks';
+import ProductCard from './ProductCard';
 
 function Home() {
   const classes = useStyles();
@@ -8,7 +11,24 @@ function Home() {
   return (
     <div className={classes.container}>
       <Banner />
-      <div style={{ height: '1200px' }} />
+      <Typography
+        gutterBottom
+        variant="h5"
+        component="div"
+        sx={(theme) => ({
+          marginBottom: '24px',
+          [theme.breakpoints.down('sm')]: {
+            marginBottom: '12px',
+          },
+        })}
+      >
+        OUR BESTSELLERS
+      </Typography>
+      <div className={classes.listItem}>
+        {list1.map((item) => (
+          <ProductCard key={item.productName} {...item} />
+        ))}
+      </div>
     </div>
   );
 }
