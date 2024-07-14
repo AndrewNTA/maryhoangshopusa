@@ -1,37 +1,36 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    width: "100%",
-    height: "100vh",
+    width: '100%',
+    height: '100vh',
     textAlign: 'center',
     boxSizing: 'border-box',
     paddingTop: '10vh',
   },
   img: {
-    width: "600px",
-    height: "auto",
-    [theme.breakpoints.down("sm")]: {
-        width: "320px",
-      },
-
+    width: '600px',
+    height: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      width: '320px',
+    },
   },
   text: {
-    margin: "40px 0",
+    margin: '40px 0',
     fontWeight: 700,
-    fontSize: "2.5em",
-    [theme.breakpoints.down("sm")]: {
-        fontSize: "1.5em",
-      },
+    fontSize: '2.5em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5em',
+    },
   },
   btn: {
-    backgroundColor: "#1EBDD3",
-    color: "#fff",
+    backgroundColor: 'var(--mary--main-color)',
+    color: 'white',
     fontWeight: 600,
-    cursor: "pointer",
-    display: "inline-block",
-    borderRadius: "4px",
-    padding: "10px 32px",
+    cursor: 'pointer',
+    display: 'inline-block',
+    borderRadius: '4px',
+    padding: '10px 32px',
   },
 }));
 
