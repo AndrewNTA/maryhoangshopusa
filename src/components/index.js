@@ -4,7 +4,6 @@ import MobileMenu from './MobileMenu';
 import StandardMenu from './StandardMenu';
 import Footer from './Footer';
 import ScrollTopBtn from './ScrollTopBtn';
-import SkeletonLoading from './SkeletonLoading';
 import SearchBar from './SearchBar';
 import Banner from './Banner';
 
@@ -15,7 +14,6 @@ export {
   StandardMenu,
   Footer,
   ScrollTopBtn,
-  SkeletonLoading,
   SearchBar,
   Banner,
 };

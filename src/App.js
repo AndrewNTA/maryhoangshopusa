@@ -16,7 +16,7 @@ function App() {
       <Menu />
       <div
         style={{
-          paddingTop: isMobile ? '110px' : 0,
+          paddingTop: isMobile ? '110px' : '180px',
         }}
       >
         <Routes>

@@ -21,7 +21,12 @@ const useStyles = makeStyles((theme) => ({
   // menu end
 
   // stadard menu start
-  standardMenuWrapper: {
+  menuWrapper: {
+    position: 'fixed',
+    width: '100%',
+    zIndex: 100,
+    top: 0,
+    left: 0,
     textAlign: 'center',
     '& .MuiAppBar-root': {
       backgroundColor: 'white',
@@ -46,18 +51,6 @@ const useStyles = makeStyles((theme) => ({
   // stadard menu end
 
   // mobile menu start
-  mobileMenuWrapper: {
-    position: 'fixed',
-    width: '100%',
-    zIndex: 100,
-    top: 0,
-    left: 0,
-    textAlign: 'center',
-    '& .MuiAppBar-root': {
-      backgroundColor: 'white',
-      color: 'var(--mary--black-85)',
-    },
-  },
   mobileMenuListItem: {
     paddingLeft: '16px',
     paddingRight: '48px',
