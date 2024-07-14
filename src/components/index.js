@@ -4,5 +4,14 @@ import MobileMenu from './MobileMenu';
 import Footer from './Footer';
 import ScrollTopBtn from './ScrollTopBtn';
 import SkeletonLoading from './SkeletonLoading';
+import SearchBar from './SearchBar';
 
-export { Spacing, Menu, MobileMenu, Footer, ScrollTopBtn, SkeletonLoading };
+export {
+  Spacing,
+  Menu,
+  MobileMenu,
+  Footer,
+  ScrollTopBtn,
+  SkeletonLoading,
+  SearchBar,
+};

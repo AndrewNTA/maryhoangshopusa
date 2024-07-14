@@ -27,6 +27,15 @@ const useStyles = makeStyles((theme) => ({
   },
   // mobile menu end
 
+  // search bar start
+  searchWrapper: {
+    display: 'flex',
+    gap: '12px',
+    padding: '32px',
+  },
+  // search bar end
+  
+
   // footer start
   footerWrapper: {
     color: '#000000',
