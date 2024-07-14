@@ -10,7 +10,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import { WEBSITE_NAME } from 'constants';
+import { WEBSITE_NAME, menuItems } from 'constants';
 import { Spacing, SearchBar } from 'components';
 import useStyles from './styles';
 
@@ -26,15 +26,6 @@ const MobileMenu = () => {
   const toggleSearch = (open) => () => {
     setSearchOpen(open);
   };
-
-  const menuItems = [
-    'Home',
-    'All products',
-    'Skin Care & Makeup',
-    'Hair Care',
-    'Vitamins & Nutrition',
-    'Contact',
-  ];
 
   const list = () => (
     <div

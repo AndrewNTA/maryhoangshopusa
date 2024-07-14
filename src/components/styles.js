@@ -1,18 +1,22 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles((theme) => ({
-  // menu start
-  menuWrapper: {
+const useStyles = makeStyles(() => ({
+  // stadard menu start
+  menuListItem: {
     display: 'flex',
     alignItems: 'center',
-    padding: '16px',
-    border: '1px solid #999',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
-      paddingTop: '12px',
+    gap: '32px',
+    justifyContent: 'center',
+    padding: '0 20px 20px 20px'
+  },
+  menuItem: {
+    cursor: 'pointer',
+    '&:hover': {
+      textDecoration: 'underline',
+      textUnderlineOffset: '.3rem',
     },
   },
-  // menu end
+  // stadard menu end
 
   // mobile menu start
   mobileMenuWrapper: {
@@ -34,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '32px',
   },
   // search bar end
-  
 
   // footer start
   footerWrapper: {
