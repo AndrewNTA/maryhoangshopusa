@@ -11,6 +11,12 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontWeight: 600,
     fontSize: '1.2rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem',
+    },
   },
   // menu end
 
@@ -58,12 +64,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     padding: '32px',
     [theme.breakpoints.down('sm')]: {
-      padding: '12px',
+      padding: '16px',
+      flexWrap: 'wrap',
     },
   },
   bannerImg: {
     width: '25%',
-    borderRadius: '12px 0 0 12px',
+    borderRadius: '8px 0 0 8px',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '240px',
+      borderRadius: '8px 8px 0 0',
+      objectFit: 'cover'
+    },
   },
   bannerContent: {
     display: 'flex',
@@ -74,6 +87,10 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     borderRadius: '0 12px 12px 0',
     textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      borderRadius: '0 0 12px 12px',
+      padding: '32px 8px',
+    },
   },
   // banner end
 

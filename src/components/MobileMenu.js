@@ -9,7 +9,6 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 import { WEBSITE_NAME, menuItems } from 'constants';
 import { Spacing, SearchBar } from 'components';
 import useStyles from './styles';
@@ -41,7 +40,6 @@ const MobileMenu = () => {
           </ListItem>
         ))}
       </List>
-      <Divider />
     </div>
   );
 
@@ -57,7 +55,15 @@ const MobileMenu = () => {
           >
             <MenuRoundedIcon />
           </IconButton>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            style={{ flexGrow: 1 }}
+            sx={(theme) => ({
+              [theme.breakpoints.down('sm')]: {
+                fontSize: '0.9rem',
+              },
+            })}
+          >
             {WEBSITE_NAME}
           </Typography>
           <IconButton
