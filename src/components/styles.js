@@ -26,11 +26,10 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 32px',
     [theme.breakpoints.down('md')]: {
       fontSize: '1rem',
-      margin: '0 24px',
+      margin: 0,
     },
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.8rem',
-      margin: '0 16px',
     },
   },
   // menu end
@@ -38,12 +37,6 @@ const useStyles = makeStyles((theme) => ({
   // stadard menu start
   standardMenuWrapper: {
     margin: '0 32px',
-    [theme.breakpoints.down('md')]: {
-      margin: '0 24px',
-    },
-    [theme.breakpoints.down('sm')]: {
-      margin: '0 16px',
-    },
   },
   menuListItem: {
     display: 'flex',

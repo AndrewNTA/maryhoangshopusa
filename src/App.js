@@ -14,7 +14,15 @@ function App() {
   const isMobile = isMobileScreen(currentWidth);
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="xl">
+      <Container
+        maxWidth="xl"
+        sx={(theme) => ({
+          [theme.breakpoints.down('md')]: {
+            paddingLeft: 0,
+            paddingRight: 0,
+          },
+        })}
+      >
         <Menu />
         <div
           style={{

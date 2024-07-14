@@ -12,7 +12,7 @@ function Home() {
   return (
     <div className={classes.container}>
       <Banner />
-      <ProductGroupTitle title="OUR SALEOFF PRODUCTS" />
+      <ProductGroupTitle title="SALEOFF PRODUCTS" />
       <div className={classes.listItem}>
         {list1.map((item) => (
           <ProductCard key={item.productName} {...item} />

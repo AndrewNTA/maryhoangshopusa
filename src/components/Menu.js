@@ -37,10 +37,17 @@ function Menu() {
         transition: 'visibility 0.2s, opacity 0.2s linear',
       }}
     >
-      <Container maxWidth="xl">
-        <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
-        {isMobile ? <MobileMenu /> : <StandardMenu />}
-      </Container>
+      {isMobile ? (
+        <>
+          <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
+          <MobileMenu />
+        </>
+      ) : (
+        <Container maxWidth="xl">
+          <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
+          {isMobile ? <MobileMenu /> : <StandardMenu />}
+        </Container>
+      )}
     </div>
   );
 }
