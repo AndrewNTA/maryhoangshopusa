@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Banner } from 'components';
+import { Banner, BannerOutline } from 'components';
 import useStyles from './styles';
 import { list1 } from './mocks';
 import ProductCard from './ProductCard';
@@ -35,6 +35,7 @@ function Home() {
           View all
         </Button>
       </div>
+      <BannerOutline />
     </div>
   );
 }

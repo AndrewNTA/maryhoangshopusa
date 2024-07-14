@@ -6,6 +6,7 @@ import Footer from './Footer';
 import ScrollTopBtn from './ScrollTopBtn';
 import SearchBar from './SearchBar';
 import Banner from './Banner';
+import BannerOutline from './BannerOutline';
 
 export {
   Spacing,
@@ -16,4 +17,5 @@ export {
   ScrollTopBtn,
   SearchBar,
   Banner,
+  BannerOutline,
 };

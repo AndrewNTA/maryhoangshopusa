@@ -39,9 +39,12 @@ const useStyles = makeStyles((theme) => ({
 
   // View All
   viewAllContainer: {
-    margin: '20px 0',
+    margin: '40px 0',
     display: 'flex',
     justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      margin: '20px 0',
+    },
   },
 }));
 
