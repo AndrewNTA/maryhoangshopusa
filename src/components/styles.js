@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   // menu start
   menuHeader: {
     display: 'flex',
@@ -52,6 +52,30 @@ const useStyles = makeStyles(() => ({
     padding: '32px',
   },
   // search bar end
+
+  // banner start
+  bannerWrapper: {
+    display: 'flex',
+    padding: '32px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '12px',
+    },
+  },
+  bannerImg: {
+    width: '25%',
+    borderRadius: '12px 0 0 12px',
+  },
+  bannerContent: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    backgroundColor: 'var(--mary--main-color)',
+    color: 'white',
+    borderRadius: '0 12px 12px 0',
+    textAlign: 'center',
+  },
+  // banner end
 
   // footer start
   footerWrapper: {
