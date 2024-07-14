@@ -15,9 +15,9 @@ import useStyles from './styles';
 
 const MobileMenu = () => {
   const classes = useStyles();
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [menuOpen, setDrawerOpen] = useState(false);
 
-  const toggleDrawer = (open) => (event) => {
+  const toggleMenu = (open) => (event) => {
     if (
       event.type === 'keydown' &&
       (event.key === 'Tab' || event.key === 'Shift')
@@ -39,8 +39,8 @@ const MobileMenu = () => {
   const list = () => (
     <div
       role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
+      onClick={toggleMenu(false)}
+      onKeyDown={toggleMenu(false)}
       className={classes.mobileMenuListItem}
     >
       <List>
@@ -62,7 +62,7 @@ const MobileMenu = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            onClick={toggleDrawer(true)}
+            onClick={toggleMenu(true)}
           >
             <MenuIcon />
           </IconButton>
@@ -71,7 +71,7 @@ const MobileMenu = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer anchor="left" open={menuOpen} onClose={toggleMenu(false)}>
         <Spacing size={48} />
         {list()}
       </Drawer>
