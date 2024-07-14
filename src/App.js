@@ -7,24 +7,27 @@ import theme from './theme';
 import './scss/index.scss';
 import { Menu, Footer } from 'components';
 import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
+import Container from '@mui/material/Container';
 
 function App() {
   const currentWidth = useCurrentWidth();
   const isMobile = isMobileScreen(currentWidth);
   return (
     <ThemeProvider theme={theme}>
-      <Menu />
-      <div
-        style={{
-          paddingTop: isMobile ? '110px' : '180px',
-        }}
-      >
-        <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/" exact element={<Home />} />
-        </Routes>
-      </div>
-      <Footer />
+      <Container maxWidth="xl">
+        <Menu />
+        <div
+          style={{
+            paddingTop: isMobile ? '110px' : '180px',
+          }}
+        >
+          <Routes>
+            <Route path="*" element={<NotFound />} />
+            <Route path="/" exact element={<Home />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Container>
     </ThemeProvider>
   );
 }

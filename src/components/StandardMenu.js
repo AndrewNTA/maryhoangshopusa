@@ -18,7 +18,7 @@ const StandardMenu = () => {
   };
 
   return (
-    <>
+    <div className={classes.standardMenuWrapper}>
       <AppBar position="static">
         <Toolbar sx={{ padding: '12px 32px !important' }}>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
@@ -44,7 +44,7 @@ const StandardMenu = () => {
       <Drawer anchor="top" open={searchOpen} onClose={toggleSearch(false)}>
         <SearchBar onClose={toggleSearch(false)} />
       </Drawer>
-    </>
+    </div >
   );
 };
 

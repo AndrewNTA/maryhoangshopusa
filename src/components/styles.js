@@ -2,25 +2,6 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   // menu start
-  menuHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '12px 20px',
-    background: 'var(--mary--main-color)',
-    color: 'white',
-    fontWeight: 600,
-    fontSize: '1.2rem',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1rem',
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.8rem',
-    },
-  },
-  // menu end
-
-  // stadard menu start
   menuWrapper: {
     position: 'fixed',
     width: '100%',
@@ -31,6 +12,37 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiAppBar-root': {
       backgroundColor: 'white',
       color: 'var(--mary--black-85)',
+    },
+  },
+  menuHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '12px 20px',
+    background: 'var(--mary--main-color)',
+    color: 'white',
+    fontWeight: 600,
+    fontSize: '1.2rem',
+    margin: '0 32px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem',
+      margin: '0 24px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem',
+      margin: '0 16px',
+    },
+  },
+  // menu end
+
+  // stadard menu start
+  standardMenuWrapper: {
+    margin: '0 32px',
+    [theme.breakpoints.down('md')]: {
+      margin: '0 24px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      margin: '0 16px',
     },
   },
   menuListItem: {

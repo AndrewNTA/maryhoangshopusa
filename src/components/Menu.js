@@ -3,6 +3,7 @@ import { MobileMenu, StandardMenu } from 'components';
 import { FREE_SHIPPING_MESSAGE } from 'constants';
 import { useCurrentWidth, isMobileScreen } from 'hooks/useCurrentScreenSize';
 import useStyles from './styles';
+import Container from '@mui/material/Container';
 
 function Menu() {
   const classes = useStyles();
@@ -36,8 +37,10 @@ function Menu() {
         transition: 'visibility 0.2s, opacity 0.2s linear',
       }}
     >
-      <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
-      {isMobile ? <MobileMenu /> : <StandardMenu />}
+      <Container maxWidth="xl">
+        <div className={classes.menuHeader}>{FREE_SHIPPING_MESSAGE}</div>
+        {isMobile ? <MobileMenu /> : <StandardMenu />}
+      </Container>
     </div>
   );
 }
