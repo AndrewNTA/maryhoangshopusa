@@ -53,12 +53,21 @@ const useStyles = makeStyles((theme) => ({
       color: 'var(--mary--main-color)',
     },
   },
+  menuItemActive: {
+    cursor: 'pointer',
+    textDecoration: 'underline',
+    textUnderlineOffset: '.3rem',
+    color: 'var(--mary--main-color)',
+  },
   // stadard menu end
 
   // mobile menu start
   mobileMenuListItem: {
     paddingLeft: '16px',
     paddingRight: '48px',
+  },
+  mobileMenuItemActive: {
+    color: 'var(--mary--main-color)',
   },
   // mobile menu end
 

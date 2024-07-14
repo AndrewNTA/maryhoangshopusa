@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -13,6 +13,8 @@ import useStyles from './styles';
 const StandardMenu = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [searchOpen, setSearchOpen] = useState(false);
 
   const toggleSearch = (open) => () => {
@@ -47,7 +49,11 @@ const StandardMenu = () => {
           {menuItems.map((item) => (
             <span
               key={item.id}
-              className={classes.menuItem}
+              className={
+                item.path === location.pathname
+                  ? classes.menuItemActive
+                  : classes.menuItem
+              }
               onClick={() => handleNavigate(item.path)}
             >
               {item.label}

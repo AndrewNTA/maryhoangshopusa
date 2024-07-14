@@ -108,7 +108,7 @@ const product11 = {
 };
 const product12 = {
   imageSrc: HairImage,
-  productName: 'Perfect Brow Kit',
+  productName: 'Perfect Pure Cream',
   productPrice: '12',
   productDiscountPrice: '10',
 };

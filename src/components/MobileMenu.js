@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -17,6 +17,7 @@ import useStyles from './styles';
 const MobileMenu = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -45,6 +46,9 @@ const MobileMenu = () => {
             <ListItemText
               primary={item.label}
               onClick={() => handleNavigate(item.path)}
+              className={
+                item.path === location.pathname && classes.mobileMenuItemActive
+              }
             />
           </ListItem>
         ))}
