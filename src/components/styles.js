@@ -1,19 +1,33 @@
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
+  // menu start
+  menuHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '12px 20px',
+    background: 'var(--mary--main-color)',
+    color: 'white',
+    fontWeight: 600,
+    fontSize: '1.2rem',
+  },
+  // menu end
+
   // stadard menu start
   menuListItem: {
     display: 'flex',
     alignItems: 'center',
     gap: '32px',
     justifyContent: 'center',
-    padding: '0 20px 20px 20px'
+    padding: '0 20px 20px 20px',
   },
   menuItem: {
     cursor: 'pointer',
     '&:hover': {
       textDecoration: 'underline',
       textUnderlineOffset: '.3rem',
+      color: 'var(--mary--main-color)',
     },
   },
   // stadard menu end
