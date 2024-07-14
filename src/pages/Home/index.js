@@ -1,9 +1,8 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Banner, BannerOutline } from 'components';
+import { Banner, BannerOutline, ProductGroupTitle } from 'components';
 import useStyles from './styles';
-import { list1 } from './mocks';
+import { list1, list4 } from './mocks';
 import ProductCard from './ProductCard';
 
 function Home() {
@@ -12,19 +11,7 @@ function Home() {
   return (
     <div className={classes.container}>
       <Banner />
-      <Typography
-        gutterBottom
-        variant="h5"
-        component="div"
-        sx={(theme) => ({
-          marginBottom: '24px',
-          [theme.breakpoints.down('sm')]: {
-            marginBottom: '12px',
-          },
-        })}
-      >
-        OUR BESTSELLERS
-      </Typography>
+      <ProductGroupTitle title="OUR SALEOFF PRODUCTS" />
       <div className={classes.listItem}>
         {list1.map((item) => (
           <ProductCard key={item.productName} {...item} />
@@ -36,6 +23,17 @@ function Home() {
         </Button>
       </div>
       <BannerOutline />
+      <ProductGroupTitle title="VITAMINS & NUTRITRION" />
+      <div className={classes.listItem}>
+        {list4.map((item) => (
+          <ProductCard key={item.productName} {...item} />
+        ))}
+      </div>
+      <div className={classes.viewAllContainer}>
+        <Button variant="outlined" color="primary" size="large">
+          View all
+        </Button>
+      </div>
     </div>
   );
 }

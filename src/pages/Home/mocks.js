@@ -102,3 +102,4 @@ export const list3 = [
   product10,
   product5,
 ];
+export const list4 = [product10, product7, product8, product9];

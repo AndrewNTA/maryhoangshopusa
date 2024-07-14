@@ -6,6 +6,7 @@ import Footer from './Footer';
 import SearchBar from './SearchBar';
 import Banner from './Banner';
 import BannerOutline from './BannerOutline';
+import ProductGroupTitle from './ProductGroupTitle';
 
 export {
   Spacing,
@@ -16,4 +17,5 @@ export {
   SearchBar,
   Banner,
   BannerOutline,
+  ProductGroupTitle
 };

@@ -8,7 +8,7 @@ export const menuItems = [
   'Body Care',
   'Hair Care',
   'Vitamins & Nutrition',
-  'Contact',
+  'SALEOFF',
 ];
 
 export const contactItems = [
