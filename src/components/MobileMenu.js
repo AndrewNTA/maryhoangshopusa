@@ -19,23 +19,11 @@ const MobileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const toggleMenu = (open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
+  const toggleMenu = (open) => () => {
     setMenuOpen(open);
   };
 
-  const toggleSearch = (open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
+  const toggleSearch = (open) => () => {
     setSearchOpen(open);
   };
 
@@ -96,7 +84,7 @@ const MobileMenu = () => {
         {list()}
       </Drawer>
       <Drawer anchor="top" open={searchOpen} onClose={toggleSearch(false)}>
-        <SearchBar onClose={() => toggleSearch(false)} />
+        <SearchBar onClose={toggleSearch(false)} />
       </Drawer>
     </div>
   );
