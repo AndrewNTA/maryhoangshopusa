@@ -24,6 +24,7 @@ function Footer() {
               <ListItemText
                 primary={item.label}
                 sx={{
+                  maxWidth: 'fit-content',
                   cursor: 'pointer',
                   '&:hover': {
                     textDecoration: 'underline',
