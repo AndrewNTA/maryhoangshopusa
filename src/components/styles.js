@@ -134,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       borderRadius: '8px 8px 0 0',
       borderBottom: 'none',
-      borderRight:'1px solid var(--mary--main-color)',
+      borderRight: '1px solid var(--mary--main-color)',
       padding: '32px 8px',
     },
   },
@@ -142,28 +142,31 @@ const useStyles = makeStyles((theme) => ({
 
   // footer start
   footerWrapper: {
-    color: '#000000',
-    backgroundColor: '#ffffff',
-    padding: '3.5rem 2.5rem',
+    color: 'white',
+    backgroundColor: 'var(--mary--main-color)',
+    padding: '2.5rem 3rem',
     marginTop: '4rem',
-    fontSize: '0.875rem',
+    fontSize: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      padding: '16px',
+      marginTop: '2rem',
+      fontSize: '0.875rem',
+    },
+  },
+  footerBox: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& .MuiListItem-root': {
+      padding: '4px 0',
+    },
+  },
+  footerBoxItem: {
+    width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
   // footer end
-
-  // scroll top button start
-  stbWrapper: {
-    position: 'fixed',
-    bottom: '18px',
-    right: '25px',
-    padding: '0.5rem',
-    borderRadius: '12px',
-    backgroundColor: '#1EBDD3',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-  },
-  // scroll top button end
 }));
 
 export default useStyles;

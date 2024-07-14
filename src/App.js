@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import theme from './theme';
 import './scss/index.scss';
-import { Menu } from 'components';
+import { Menu, Footer } from 'components';
 import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
         </Routes>
       </div>
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -10,3 +10,10 @@ export const menuItems = [
   'Vitamins & Nutrition',
   'Contact',
 ];
+
+export const contactItems = [
+  'Phone: +1 888 888 888',
+  'Zalo: Mary Hoang',
+  'Facebook: Mary Hoang',
+  'Email: maryhoang@gmail.com',
+];
