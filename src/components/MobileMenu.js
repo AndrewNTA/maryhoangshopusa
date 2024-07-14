@@ -10,10 +10,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import { WEBSITE_NAME } from 'constants';
+import { Spacing } from 'components';
 import useStyles from './styles';
 
 const MobileMenu = () => {
-    const classes = useStyles();
+  const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
@@ -40,6 +41,7 @@ const MobileMenu = () => {
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
+      className={classes.mobileMenuListItem}
     >
       <List>
         {menuItems.map((text) => (
@@ -70,6 +72,7 @@ const MobileMenu = () => {
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+        <Spacing size={48} />
         {list()}
       </Drawer>
     </div>

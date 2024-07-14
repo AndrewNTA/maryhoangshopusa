@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
       color: 'var(--mary--black-85)',
     },
   },
+  mobileMenuListItem: {
+    paddingLeft: '16px',
+    paddingRight: '48px',
+  },
   // mobile menu end
 
   // footer start
