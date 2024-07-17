@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 import GroupCard from './GroupCard';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 
-function Home() {
+function Home({ products }) {
   const classes = useStyles();
   const navigate = useNavigate();
   useScrollToTop();

@@ -7,7 +7,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const client = new ApolloClient({
-  uri: "https://api-ap-northeast-1.hygraph.com/v2/clwassbua00l508w1n2ri3b78/master",
+  uri: "https://api-us-west-2.hygraph.com/v2/clyo4zq5j000207uvgyp18f2s/master",
   cache: new InMemoryCache(),
 });
 

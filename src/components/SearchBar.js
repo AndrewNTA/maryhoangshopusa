@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import IconButton from '@mui/material/IconButton';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import TextField from '@mui/material/TextField';
 import useStyles from './styles';
-import { list2 } from 'pages/Home/mocks';
 import { isPhoneScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 import useDebounce from 'hooks/useDebounce';
 import { removeAccents } from 'utils';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from 'App';
 
 const SearchBar = ({ onClose }) => {
   const classes = useStyles();
   const currentWidth = useCurrentWidth();
   const isPhone = isPhoneScreen(currentWidth);
   const navigate = useNavigate();
+  const{ products } = useContext(AppContext)
 
   const handleNavigate = () => {
     navigate('/products/1');
@@ -28,14 +29,14 @@ const SearchBar = ({ onClose }) => {
       setFiltered(
         !search
           ? []
-          : list2.filter((d) =>
-              removeAccents(d.productName)
+          : products.filter((d) =>
+              removeAccents(d.name)
                 .toLowerCase()
                 .includes(search.toLowerCase())
             )
       );
     },
-    [list2, search],
+    [products, search],
     300
   );
 
@@ -73,14 +74,14 @@ const SearchBar = ({ onClose }) => {
       {filtered.length > 0 && (
         <div className={classes.resultSearch}>
           {filtered.map((item) => (
-            <div className={classes.resultItem} key={item.productName}>
+            <div className={classes.resultItem} key={item.id}>
               <img
                 className={classes.resultImgItem}
-                alt={item.productName}
-                src={item.imageSrc}
+                alt={item.name}
+                src={item.mainImage?.url}
               />
               <div className={classes.resultNameItem} onClick={handleNavigate}>
-                {item.productName}
+                {item.name}
               </div>
             </div>
           ))}
