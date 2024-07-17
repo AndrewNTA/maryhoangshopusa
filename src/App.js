@@ -11,6 +11,7 @@ import { Menu, Footer } from 'components';
 import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 import theme from './theme';
 import './scss/index.scss';
+import "react-image-gallery/styles/css/image-gallery.css";
 
 function App() {
   const currentWidth = useCurrentWidth();

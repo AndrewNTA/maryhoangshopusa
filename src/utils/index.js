@@ -5,3 +5,13 @@ export const formatPrice = (price) => {
   });
   return formatter.format(price);
 };
+
+export const genImages = (arr) => {
+  if (!arr || arr.length === 0) return null;
+  return arr.map((g) => ({
+    original: g.imageSrc,
+    thumbnail: g.imageSrc,
+    thumbnailHeight: 90,
+    thumbnailWidth: 80
+  }));
+};
