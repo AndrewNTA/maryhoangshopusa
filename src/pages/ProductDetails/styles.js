@@ -20,13 +20,16 @@ const useStyles = makeStyles((theme) => ({
   },
   imageGallery: {
     width: '60%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '100%',
     },
   },
   productInfo: {
     flex: 1,
     padding: '32px 0',
+    [theme.breakpoints.down('md')]: {
+      padding: 0,
+    },
     [theme.breakpoints.down('sm')]: {
       padding: '24px 2px',
     },
@@ -43,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     gap: 16,
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
-      gap: 8
+      gap: 8,
     },
   },
   priceNew: {
@@ -62,6 +65,16 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1rem',
     },
   },
+  infoMessage: {
+    textTransform: 'uppercase',
+    fontSize: '1.2rem',
+    fontWeight: 600
+  },
+  contactInfoTitle: {
+    fontSize: '1.1rem',
+    fontWeight: 500,
+    marginTop: 32,
+  }
 }));
 
 export default useStyles;
