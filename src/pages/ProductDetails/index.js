@@ -44,8 +44,8 @@ function ProductDetails() {
   const price = product?.price;
   const description = product?.description;
   const mainImage = product?.mainImage;
-  const relateImages = product?.relateImages || [];
-  const allImage = relateImages.shift(mainImage);
+  const relateImages = useMemo(() => product?.relateImages || [], [product?.relateImages]);
+  const allImage = useMemo(() => mainImage ? [mainImage, ...relateImages] : [], [mainImage, relateImages]);
 
   const firstPrice = formatPrice(Number(discountPrice ? discountPrice : price));
   const secondPrice = discountPrice ? formatPrice(Number(price)) : '';
