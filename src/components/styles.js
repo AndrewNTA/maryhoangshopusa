@@ -23,10 +23,8 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontWeight: 600,
     fontSize: '1.2rem',
-    margin: '0 32px',
     [theme.breakpoints.down('md')]: {
       fontSize: '1rem',
-      margin: 0,
     },
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.8rem',
@@ -36,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
   // stadard menu start
   standardMenuWrapper: {
-    margin: '0 32px',
+    margin: 0,
   },
   menuListItem: {
     display: 'flex',
@@ -158,15 +156,11 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     backgroundColor: 'var(--mary--main-color)',
     padding: '2.5rem 3rem',
-    margin: '4rem 32px 0 32px',
     marginTop: '4rem',
     fontSize: '1rem',
-    [theme.breakpoints.down('md')]: {
-      margin: '4rem 0 0 0',
-    },
     [theme.breakpoints.down('sm')]: {
       padding: '16px',
-      margin: '2rem 0 0 0',
+      marginTop: '2rem',
       fontSize: '0.875rem',
     },
   },

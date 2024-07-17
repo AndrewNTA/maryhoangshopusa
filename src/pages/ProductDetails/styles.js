@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   topSection: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: 32,
+    gap: 48,
     [theme.breakpoints.down('sm')]: {
       gap: 0,
     },
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   productInfo: {
     flex: 1,
-    padding: 32,
+    padding: '32px 0',
     [theme.breakpoints.down('sm')]: {
       padding: '24px 2px',
     },
