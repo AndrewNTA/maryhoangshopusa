@@ -82,6 +82,34 @@ const useStyles = makeStyles((theme) => ({
       padding: '16px',
     },
   },
+  resultSearch: {
+    padding: '4px 32px',
+    [theme.breakpoints.down('md')]: {
+      padding: '16px 24px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: 16,
+    },
+  },
+  resultItem: {
+    display: 'flex',
+    alignItems: 'start',
+    gap: 8,
+    paddingBottom: 16,
+  },
+  resultImgItem: {
+    width: 60,
+    borderRadius: 4
+  },
+  resultNameItem: {
+    fontSize: '1rem',
+    cursor: 'pointer',
+    '&:hover': {
+      color: 'var(--mary--main-color)',
+      textDecoration: 'underline',
+      textUnderlineOffset: '.3rem',
+    },
+  },
   // search bar end
 
   // banner start
