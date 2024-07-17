@@ -11,7 +11,7 @@ export const genImages = (arr) => {
   return arr.map((g) => ({
     original: g.imageSrc,
     thumbnail: g.imageSrc,
-    thumbnailHeight: 90,
+    thumbnailHeight: 80,
     thumbnailWidth: 80
   }));
 };

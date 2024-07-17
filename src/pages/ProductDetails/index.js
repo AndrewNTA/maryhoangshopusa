@@ -3,12 +3,9 @@ import ImageGallery from 'react-image-gallery';
 import { genImages } from 'utils';
 import { list3 } from 'pages/Home/mocks';
 import useStyles from './styles';
-import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 
 function ProductDetails() {
   const classes = useStyles();
-  const currentWidth = useCurrentWidth();
-  const isMobile = isMobileScreen(currentWidth);
   const imageList = useMemo(() => genImages(list3), []);
 
   return (
@@ -19,7 +16,7 @@ function ProductDetails() {
             <ImageGallery
               items={imageList}
               showPlayButton={false}
-              thumbnailPosition={isMobile ? 'bottom' : 'left'}
+              thumbnailPosition="left"
             />
           )}
         </div>
