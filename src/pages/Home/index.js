@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { Banner, BannerOutline, ProductGroupTitle, Spacing } from 'components';
 import useStyles from './styles';
-import { list1, list4, groupList } from './mocks';
+import { VITAMINS_AND_NUTRITION, groupList } from 'constant';
 import ProductCard from './ProductCard';
 import GroupCard from './GroupCard';
 import { useScrollToTop } from 'hooks/useScrollToTop';
+import { getSaleoffProducts, getProductsByGroup } from 'utils';
 
 function Home({ products }) {
   const classes = useStyles();
@@ -17,13 +18,23 @@ function Home({ products }) {
     navigate(path);
   };
 
+  const saleoffProducts = useMemo(
+    () => getSaleoffProducts(products).slice(0, 8),
+    [products]
+  );
+
+  const vitaminProducts = useMemo(
+    () => getProductsByGroup(products, VITAMINS_AND_NUTRITION).slice(0, 4),
+    [products]
+  );
+
   return (
     <div className={classes.container}>
       <Banner />
       <ProductGroupTitle title="SALEOFF PRODUCTS" />
       <div className={classes.listItem}>
-        {list1.map((item) => (
-          <ProductCard key={item.productName} {...item} />
+        {saleoffProducts.map((item) => (
+          <ProductCard key={item.id} {...item} />
         ))}
       </div>
       <div className={classes.viewAllContainer}>
@@ -45,8 +56,8 @@ function Home({ products }) {
       <BannerOutline />
       <ProductGroupTitle title="VITAMINS & NUTRITRION" />
       <div className={classes.listItem}>
-        {list4.map((item) => (
-          <ProductCard key={item.productName} {...item} />
+        {vitaminProducts.map((item) => (
+          <ProductCard key={item.id} {...item} />
         ))}
       </div>
       <div className={classes.viewAllContainer}>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { menuItems, contactItems } from 'constants';
+import { menuItems, contactItems } from 'constant';
 import useStyles from './styles';
 
 function Footer() {

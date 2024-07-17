@@ -75,3 +75,9 @@ export const contactItems = [
   'Facebook: Mary Hoang',
   'Email: maryhoang@gmail.com',
 ];
+
+export const VITAMINS_AND_NUTRITION = 'vitaminsAndNutrition';
+export const BODY_CARE = 'bodyCare';
+export const THUOC_GIAM_CAN = 'thuocGiamCan';
+export const SKIN_CARE_AND_MAKEUP = 'skinCareAndMakeup';
+export const HAIR_CARE = 'hairCare';

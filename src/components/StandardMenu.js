@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import Typography from '@mui/material/Typography';
 import Drawer from '@mui/material/Drawer';
-import { WEBSITE_NAME, menuItems } from 'constants';
+import { WEBSITE_NAME, menuItems } from 'constant';
 import { SearchBar } from 'components';
 import useStyles from './styles';
 

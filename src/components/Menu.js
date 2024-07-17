@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { MobileMenu, StandardMenu } from 'components';
-import { FREE_SHIPPING_MESSAGE } from 'constants';
+import { FREE_SHIPPING_MESSAGE } from 'constant';
 import { useCurrentWidth, isMobileScreen } from 'hooks/useCurrentScreenSize';
 import useStyles from './styles';
 import Container from '@mui/material/Container';

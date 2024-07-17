@@ -9,8 +9,8 @@ export const formatPrice = (price) => {
 export const genImages = (arr) => {
   if (!arr || arr.length === 0) return null;
   return arr.map((g) => ({
-    original: g.imageSrc,
-    thumbnail: g.imageSrc,
+    original: g.url,
+    thumbnail: g.url,
     thumbnailHeight: 80,
     thumbnailWidth: 80,
   }));
@@ -23,3 +23,13 @@ export function removeAccents(str) {
     .replace(/đ/g, 'd')
     .replace(/Đ/g, 'D');
 }
+
+export const getSaleoffProducts = (products) => {
+  if (!products) return [];
+  return products.filter((item) => item.isSaleOff);
+};
+
+export const getProductsByGroup = (products, group) => {
+  if (!products) return [];
+  return products.filter((item) => item.group === group);
+};

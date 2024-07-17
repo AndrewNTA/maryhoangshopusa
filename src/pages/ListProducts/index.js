@@ -1,22 +1,21 @@
 import React from 'react';
 import useStyles from 'pages/Home/styles';
-import { list2 } from 'pages/Home/mocks';
 import ProductCard from 'pages/Home/ProductCard';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 
-function SaleoffProducts() {
+function ListProducts({ products }) {
   const classes = useStyles();
   useScrollToTop();
 
   return (
     <div className={classes.container}>
       <div className={classes.listItem}>
-        {list2.map((item) => (
-          <ProductCard key={item.productName} {...item} />
+        {products && products.map((item) => (
+          <ProductCard key={item.id} {...item} />
         ))}
       </div>
     </div>
   );
 }
 
-export default SaleoffProducts;
+export default ListProducts;

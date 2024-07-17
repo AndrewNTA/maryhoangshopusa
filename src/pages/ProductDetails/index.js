@@ -1,18 +1,60 @@
 import React, { useMemo } from 'react';
 import ImageGallery from 'react-image-gallery';
+import { useQuery, gql } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 import { formatPrice, genImages } from 'utils';
 import Rating from '@mui/material/Rating';
-import { list3 } from 'pages/Home/mocks';
 import { Spacing } from 'components';
 
 import useStyles from './styles';
 import ContactInfo from './ContactInfo';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 
+const PRODUCT_QUERY = gql`
+  query Product($id: ID) {
+    product(where: { id: $id }) {
+      description {
+        html
+      }
+      discountPrice
+      id
+      name
+      price
+      relateImages {
+        url
+      }
+      mainImage {
+        url
+      }
+    }
+  }
+`;
+
 function ProductDetails() {
   const classes = useStyles();
   useScrollToTop();
-  const imageList = useMemo(() => genImages(list3), []);
+  const { id } = useParams();
+  const { data } = useQuery(PRODUCT_QUERY, {
+    variables: {
+      id,
+    },
+  });
+  const product = data?.product;
+  const discountPrice = product?.discountPrice;
+  const price = product?.price;
+  const description = product?.description;
+  const mainImage = product?.mainImage;
+  const relateImages = product?.relateImages || [];
+  const allImage = relateImages.shift(mainImage);
+
+  const firstPrice = formatPrice(Number(discountPrice ? discountPrice : price));
+  const secondPrice = discountPrice ? formatPrice(Number(price)) : '';
+
+  const imageList = useMemo(() => genImages(allImage), [allImage]);
+
+  if (!product) {
+    return <div>Loading</div>
+  }
 
   return (
     <div className={classes.container}>
@@ -27,7 +69,7 @@ function ProductDetails() {
           )}
         </div>
         <div className={classes.productInfo}>
-          <div className={classes.productName}>Silk Finish Setting Powder</div>
+          <div className={classes.productName}>{product?.name}</div>
           <Rating
             name="read-only"
             value={4}
@@ -41,8 +83,8 @@ function ProductDetails() {
           />
           <Spacing />
           <div className={classes.priceBox}>
-            <div className={classes.priceNew}>{formatPrice(45)}</div>
-            <div className={classes.priceOld}>{formatPrice(50)}</div>
+            <div className={classes.priceNew}>{firstPrice}</div>
+            <div className={classes.priceOld}>{secondPrice}</div>
           </div>
           <Spacing />
           <div className={classes.infoMessage}>Cam kết hàng chính hãng</div>
@@ -52,7 +94,11 @@ function ProductDetails() {
       </div>
       <div className={classes.bottomSection}>
         <div className={classes.title}>Thông tin chi tiết</div>
-        <div>test</div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: description?.html ?? '',
+          }}
+        />
       </div>
     </div>
   );

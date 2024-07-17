@@ -8,10 +8,11 @@ import { formatPrice } from 'utils';
 import useStyles from './styles';
 
 export default function ProductCard({
-  imageSrc,
-  productName,
-  productPrice,
-  productDiscountPrice,
+  id,
+  name,
+  price,
+  discountPrice,
+  mainImage,
 }) {
   const classes = useStyles();
   const navigate = useNavigate();
@@ -20,11 +21,12 @@ export default function ProductCard({
     navigate(path);
   };
 
-  const price = productDiscountPrice ? productDiscountPrice : productPrice;
+  const firstPrice = formatPrice(Number(discountPrice ? discountPrice : price));
+  const secondPrice = discountPrice ? formatPrice(Number(price)) : '';
   return (
     <Card
       sx={{ cursor: 'pointer' }}
-      onClick={() => handleNavigate('/products/1')}
+      onClick={() => handleNavigate(`/products/${id}`)}
     >
       <CardMedia
         sx={(theme) => ({
@@ -33,8 +35,8 @@ export default function ProductCard({
             height: 140,
           },
         })}
-        image={imageSrc}
-        title={productName}
+        image={mainImage?.url}
+        title={name}
       />
       <CardContent>
         <Typography
@@ -47,7 +49,7 @@ export default function ProductCard({
             },
           })}
         >
-          {productName}
+          {name}
         </Typography>
         <div className={classes.priceWrapper}>
           <Typography
@@ -61,7 +63,7 @@ export default function ProductCard({
               },
             })}
           >
-            {formatPrice(Number(price))}
+            {firstPrice}
           </Typography>
           <Typography
             variant="body2"
@@ -74,7 +76,7 @@ export default function ProductCard({
               },
             })}
           >
-            {productDiscountPrice ? formatPrice(Number(productPrice)) : ''}
+            {secondPrice}
           </Typography>
         </div>
       </CardContent>

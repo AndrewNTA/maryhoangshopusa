@@ -10,7 +10,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { WEBSITE_NAME, menuItems } from 'constants';
+import { WEBSITE_NAME, menuItems } from 'constant';
 import { SearchBar } from 'components';
 import useStyles from './styles';
 
