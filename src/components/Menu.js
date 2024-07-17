@@ -13,7 +13,9 @@ function Menu() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = useCallback(() => {
-    if (window.scrollY > lastScrollY) {
+    if (window.scrollY <= 100) {
+      setShow(true)
+    } else if (window.scrollY > lastScrollY) {
       setShow(false);
     } else {
       setShow(true);
