@@ -95,7 +95,7 @@ const product9 = {
 };
 const product10 = {
   imageSrc: Image10,
-  productName: 'Revitalizing Eye Cream',
+  productName: 'Thuốc giảm cân kẹo socola Canada',
   productPrice: '32',
   productDiscountPrice: '29',
 };
@@ -108,7 +108,7 @@ const product11 = {
 };
 const product12 = {
   imageSrc: HairImage,
-  productName: 'Perfect Pure Cream',
+  productName: 'Kem dưỡng da ban đêm Dove',
   productPrice: '12',
   productDiscountPrice: '10',
 };
@@ -120,7 +120,7 @@ const product13 = {
 };
 const product14 = {
   imageSrc: Image6,
-  productName: 'Silk Finish Cream',
+  productName: 'Dầu gội đầu sunsilk suôn mượt',
   productPrice: '22',
   productDiscountPrice: '15',
 };
