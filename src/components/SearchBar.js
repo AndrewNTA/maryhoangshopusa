@@ -16,8 +16,8 @@ const SearchBar = ({ onClose }) => {
   const navigate = useNavigate();
   const{ products } = useContext(AppContext)
 
-  const handleNavigate = () => {
-    navigate('/products/1');
+  const handleNavigate = (id) => {
+    navigate(`/products/${id}`);
     onClose();
   };
 
@@ -80,7 +80,7 @@ const SearchBar = ({ onClose }) => {
                 alt={item.name}
                 src={item.mainImage?.url}
               />
-              <div className={classes.resultNameItem} onClick={handleNavigate}>
+              <div className={classes.resultNameItem} onClick={() => handleNavigate(item.id)}>
                 {item.name}
               </div>
             </div>
