@@ -7,11 +7,18 @@ import { list2 } from 'pages/Home/mocks';
 import { isPhoneScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 import useDebounce from 'hooks/useDebounce';
 import { removeAccents } from 'utils';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = ({ onClose }) => {
   const classes = useStyles();
   const currentWidth = useCurrentWidth();
   const isPhone = isPhoneScreen(currentWidth);
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/products/1');
+    onClose();
+  };
 
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState([]);
@@ -72,7 +79,9 @@ const SearchBar = ({ onClose }) => {
                 alt={item.productName}
                 src={item.imageSrc}
               />
-              <div className={classes.resultNameItem}>{item.productName}</div>
+              <div className={classes.resultNameItem} onClick={handleNavigate}>
+                {item.productName}
+              </div>
             </div>
           ))}
         </div>
