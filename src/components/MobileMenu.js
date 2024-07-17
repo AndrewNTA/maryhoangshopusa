@@ -47,7 +47,9 @@ const MobileMenu = () => {
               primary={item.label}
               onClick={() => handleNavigate(item.path)}
               className={
-                item.path === location.pathname && classes.mobileMenuItemActive
+                item.path === location.pathname
+                  ? classes.mobileMenuItemActive
+                  : null
               }
             />
           </ListItem>
