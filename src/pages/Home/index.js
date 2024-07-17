@@ -6,21 +6,16 @@ import useStyles from './styles';
 import { list1, list4, groupList } from './mocks';
 import ProductCard from './ProductCard';
 import GroupCard from './GroupCard';
+import { useScrollToTop } from 'hooks/useScrollToTop';
 
 function Home() {
   const classes = useStyles();
   const navigate = useNavigate();
+  useScrollToTop();
 
   const handleNavigate = (path) => {
     navigate(path);
   };
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }, []);
 
   return (
     <div className={classes.container}>

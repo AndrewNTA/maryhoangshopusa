@@ -7,9 +7,11 @@ import { Spacing } from 'components';
 
 import useStyles from './styles';
 import ContactInfo from './ContactInfo';
+import { useScrollToTop } from 'hooks/useScrollToTop';
 
 function ProductDetails() {
   const classes = useStyles();
+  useScrollToTop();
   const imageList = useMemo(() => genImages(list3), []);
 
   return (
@@ -47,6 +49,10 @@ function ProductDetails() {
           <div className={classes.contactInfoTitle}>Thông tin liên hệ</div>
           <ContactInfo />
         </div>
+      </div>
+      <div className={classes.bottomSection}>
+        <div className={classes.title}>Thông tin chi tiết</div>
+        <div>test</div>
       </div>
     </div>
   );

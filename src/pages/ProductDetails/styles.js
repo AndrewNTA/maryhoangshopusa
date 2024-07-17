@@ -68,13 +68,29 @@ const useStyles = makeStyles((theme) => ({
   infoMessage: {
     textTransform: 'uppercase',
     fontSize: '1.2rem',
-    fontWeight: 600
+    fontWeight: 600,
   },
   contactInfoTitle: {
     fontSize: '1.1rem',
     fontWeight: 500,
     marginTop: 32,
-  }
+  },
+  bottomSection: {
+    width: '100%',
+    padding: '32px 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
+  },
+  title: {
+    fontSize: '1.2rem',
+    fontWeight: 600,
+    marginBottom: 24,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+      marginBottom: 16,
+    },
+  },
 }));
 
 export default useStyles;

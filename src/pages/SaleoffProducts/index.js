@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useStyles from 'pages/Home/styles';
 import { list2 } from 'pages/Home/mocks';
 import ProductCard from 'pages/Home/ProductCard';
+import { useScrollToTop } from 'hooks/useScrollToTop';
 
 function SaleoffProducts() {
   const classes = useStyles();
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }, []);
+  useScrollToTop();
 
   return (
     <div className={classes.container}>
