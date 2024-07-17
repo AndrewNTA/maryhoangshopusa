@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import ImageGallery from 'react-image-gallery';
-import { genImages } from 'utils';
+import { formatPrice, genImages } from 'utils';
 import { list3 } from 'pages/Home/mocks';
 import useStyles from './styles';
+import { Spacing } from 'components';
 
 function ProductDetails() {
   const classes = useStyles();
@@ -20,7 +21,16 @@ function ProductDetails() {
             />
           )}
         </div>
-        <div className={classes.productInfo}>product info name data</div>
+        <div className={classes.productInfo}>
+          <span className={classes.productName}>
+            Silk Finish Setting Powder
+          </span>
+          <Spacing />
+          <div className={classes.priceBox}>
+          <span className={classes.priceNew}>{formatPrice(45)}</span>
+          <span className={classes.priceOld}>{formatPrice(50)}</span>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -63,8 +63,7 @@ const useStyles = makeStyles((theme) => ({
 
   // mobile menu start
   mobileMenuListItem: {
-    paddingLeft: '16px',
-    paddingRight: '48px',
+    padding: '48px 48px 16px 16px',
   },
   mobileMenuItemActive: {
     color: 'var(--mary--main-color)',
@@ -185,6 +184,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   // footer end
+
+  // spacing start
+  spacing: {
+    width: '100%',
+    height: 36,
+    [theme.breakpoints.down('md')]: {
+      height: 24,
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 16,
+    },
+  },
+  // spacing end
 }));
 
 export default useStyles;

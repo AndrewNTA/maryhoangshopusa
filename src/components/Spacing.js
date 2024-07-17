@@ -1,15 +1,9 @@
 import React from 'react';
+import useStyles from './styles';
 
-function Spacing({ size, color }) {
-  return (
-    <div
-      style={{
-        width: '100%',
-        height: `${size}px`,
-        backgroundColor: color ? color : 'transparent',
-      }}
-    />
-  );
+function Spacing() {
+  const classes = useStyles();
+  return <div className={classes.spacing} />;
 }
 
 export default Spacing;

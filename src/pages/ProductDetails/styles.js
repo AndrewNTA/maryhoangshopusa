@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
   topSection: {
     display: 'flex',
     flexWrap: 'wrap',
+    gap: 32,
+    [theme.breakpoints.down('sm')]: {
+      gap: 0,
+    },
   },
   imageGallery: {
     width: '60%',
@@ -22,7 +26,41 @@ const useStyles = makeStyles((theme) => ({
   },
   productInfo: {
     flex: 1,
-    paddingLeft: 16
+    padding: 32,
+    [theme.breakpoints.down('sm')]: {
+      padding: '24px 2px',
+    },
+  },
+  productName: {
+    fontSize: '2.2rem',
+    fontWeight: 600,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.6rem',
+    },
+  },
+  priceBox: {
+    display: 'flex',
+    gap: 16,
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      gap: 8
+    },
+  },
+  priceNew: {
+    fontWeight: 700,
+    fontSize: '2.2rem',
+    color: 'var(--mary--main-color)',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.4rem',
+    },
+  },
+  priceOld: {
+    textDecoration: 'line-through',
+    fontSize: '1.6rem',
+    color: '#9E9FA5',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
   },
 }));
 

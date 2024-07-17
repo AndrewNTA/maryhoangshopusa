@@ -46,7 +46,7 @@ function Home() {
           <GroupCard key={group.groupName} {...group} />
         ))}
       </div>
-      <Spacing size={48} />
+      <Spacing />
       <BannerOutline />
       <ProductGroupTitle title="VITAMINS & NUTRITRION" />
       <div className={classes.listItem}>

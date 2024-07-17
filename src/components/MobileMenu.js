@@ -11,7 +11,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { WEBSITE_NAME, menuItems } from 'constants';
-import { Spacing, SearchBar } from 'components';
+import { SearchBar } from 'components';
 import useStyles from './styles';
 
 const MobileMenu = () => {
@@ -91,7 +91,6 @@ const MobileMenu = () => {
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={menuOpen} onClose={toggleMenu(false)}>
-        <Spacing size={48} />
         {list()}
       </Drawer>
       <Drawer anchor="top" open={searchOpen} onClose={toggleSearch(false)}>
