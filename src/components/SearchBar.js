@@ -6,6 +6,7 @@ import useStyles from './styles';
 import { list2 } from 'pages/Home/mocks';
 import { isPhoneScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 import useDebounce from 'hooks/useDebounce';
+import { removeAccents } from 'utils';
 
 const SearchBar = ({ onClose }) => {
   const classes = useStyles();
@@ -21,7 +22,9 @@ const SearchBar = ({ onClose }) => {
         !search
           ? []
           : list2.filter((d) =>
-              d.productName.toLowerCase().includes(search.toLowerCase())
+              removeAccents(d.productName)
+                .toLowerCase()
+                .includes(search.toLowerCase())
             )
       );
     },
@@ -63,7 +66,7 @@ const SearchBar = ({ onClose }) => {
       {filtered.length > 0 && (
         <div className={classes.resultSearch}>
           {filtered.map((item) => (
-            <div className={classes.resultItem}>
+            <div className={classes.resultItem} key={item.productName}>
               <img
                 className={classes.resultImgItem}
                 alt={item.productName}
