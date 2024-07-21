@@ -53,7 +53,7 @@ function BannerOutline() {
             variant="outlined"
             color="primary"
             size="large"
-            onClick={() => handleNavigate('/vitamins-nutrition')}
+            onClick={() => handleNavigate('/dau-goi')}
           >
             Shop now
           </Button>

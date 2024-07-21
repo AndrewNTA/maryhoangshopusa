@@ -42,8 +42,9 @@ export const AppContext = React.createContext({
 });
 
 function App() {
-  const { data } = useQuery(PRODUCTS_QUERY);
-  const productList = data?.products ?? null;
+  // const { data } = useQuery(PRODUCTS_QUERY);
+  // const productList = data?.products ?? null;
+  const productList = null;
   const currentWidth = useCurrentWidth();
   const isMobile = isMobileScreen(currentWidth);
 
@@ -110,31 +111,31 @@ function App() {
                 }
               />
               <Route
-                path="/body-care"
+                path="/thuc-pham-chuc-nang"
                 element={
-                  <ListProducts key="body-care" products={bodyCareProducts} />
+                  <ListProducts key="thuc-pham-chuc-nang" products={bodyCareProducts} />
                 }
               />
               <Route
-                path="/hair-care"
+                path="/giam-can-diet"
                 element={
-                  <ListProducts key="hair-care" products={hairCareProducts} />
+                  <ListProducts key="giam-can-diet" products={hairCareProducts} />
                 }
               />
               <Route
-                path="/skin-care-makeup"
+                path="/my-pham-han-quoc"
                 element={
                   <ListProducts
-                    key="skin-care-makeup"
+                    key="my-pham-han-quoc"
                     products={skinCareProducts}
                   />
                 }
               />
               <Route
-                path="/vitamins-nutrition"
+                path="/dau-goi"
                 element={
                   <ListProducts
-                    key="vitamins-nutrition"
+                    key="dau-goi"
                     products={vitaminProducts}
                   />
                 }

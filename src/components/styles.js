@@ -177,6 +177,28 @@ const useStyles = makeStyles((theme) => ({
       padding: '32px 8px',
     },
   },
+  bannerHeading: {
+    fontSize: '2.5rem',
+    fontWeight: 500,
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.6rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem',
+    },
+  },
+  bannerText: {
+    fontSize: '1.5rem',
+    fontWeight: 500,
+    margin: '6px 0 32px 0',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.2rem',
+      margin: '2px 0 12px 0',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
+  },
   // banner end
 
   // footer start

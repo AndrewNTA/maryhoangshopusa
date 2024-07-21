@@ -65,7 +65,7 @@ function Home({ products }) {
           variant="outlined"
           color="primary"
           size="large"
-          onClick={() => handleNavigate('/vitamins-nutrition')}
+          onClick={() => handleNavigate('/dau-goi')}
         >
           View all
         </Button>
