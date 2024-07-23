@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
   },
   resultImgItem: {
     width: 60,
-    borderRadius: 4
+    borderRadius: 4,
   },
   resultNameItem: {
     fontSize: '1rem',
@@ -225,6 +225,15 @@ const useStyles = makeStyles((theme) => ({
     width: '50%',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
+    },
+  },
+  footerItem: {
+    color: 'white',
+    textDecoration: 'none',
+    margin: '4px 0',
+    '&:hover': {
+      textDecoration: 'underline',
+      textUnderlineOffset: '.3rem',
     },
   },
   // footer end

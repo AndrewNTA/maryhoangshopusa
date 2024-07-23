@@ -75,9 +75,25 @@ export const menuItems = [
 ];
 
 export const contactItems = [
-  'Phone: 678 559 8867',
-  'Zalo: Mary Hoang',
-  'Facebook: Mary Hoang',
+  { label: 'Phone: 678 559 8867', value: 'tel:+16785598867' },
+  { label: 'Zalo: Mary Hoang', value: 'tel:+16785598867' },
+  {
+    label: 'Facebook: Mary Hoang',
+    value: 'https://www.facebook.com/mary.hoang.14224',
+  },
+  {
+    label: 'Facebook: Mary Linda',
+    value: 'https://www.facebook.com/profile.php?id=100027470498826',
+  },
+  {
+    label: 'Facebook: Mary T Thuong',
+    value: 'https://www.facebook.com/profile.php?id=100022235714613',
+  },
+];
+
+export const paymentItems = [
+  'Zelle: Mary Hoang - 678 559 8867',
+  'Venmo: Mary Hoang123 - 678 559 8867',
 ];
 
 export const VITAMINS_AND_NUTRITION = 'vitaminsAndNutrition';
