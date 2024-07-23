@@ -30,7 +30,7 @@ function BannerOutline() {
               },
             })}
           >
-            Kẹo giảm cân & Thực phẩm chức năng
+            Thực phẩm chức năng
           </Typography>
           <Typography
             color="var(--mary--main-color)"

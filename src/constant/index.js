@@ -4,18 +4,18 @@ import SkinImage from 'static/images/skin-care-img.jpg';
 
 const bodyGroup = {
   imageSrc: BodyImage,
-  path: '/thuc-pham-chuc-nang',
-  groupName: 'Thực phẩm chức năng',
+  path: '/giam-can-diet',
+  groupName: 'Giảm cân (Diet)',
   groupDescription:
-    'Pamper your skin with our exquisite range of body care products.',
+    'Chuyên các sản phẩm kẹo giảm cân, hỗ trợ ăn kiêng, giảm mỡ, tăng cơ...',
 };
 
 const hairGroup = {
   imageSrc: HairImage,
-  path: '/giam-can-diet',
-  groupName: 'Giảm cân (Diet)',
+  path: '/dau-goi',
+  groupName: 'Dầu gội',
   groupDescription:
-    'Discover the secret to luscious, healthy hair with our exceptional range of hair care products.',
+    'Cung cấp các sản phẩm dầu gội, dầu xả phù hợp với nhiều loại tóc...',
 };
 
 const skinGroup = {
@@ -23,7 +23,7 @@ const skinGroup = {
   path: '/my-pham-han-quoc',
   groupName: 'Mỹ phẩm Hàn Quốc',
   groupDescription:
-    'Unleash your creativity with our exquisite makeup collection.',
+    'Bán mỹ phẩm Hàn Quốc, các sản phẩm skincare và makeup, cam kết chính hãng...',
 };
 
 export const groupList = [bodyGroup, hairGroup, skinGroup];

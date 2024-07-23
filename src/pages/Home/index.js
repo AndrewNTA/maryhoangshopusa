@@ -54,7 +54,7 @@ function Home({ products }) {
       </div>
       <Spacing />
       <BannerOutline />
-      <ProductGroupTitle title="VITAMINS & NUTRITRION" />
+      <ProductGroupTitle title="SERUM MỌC TÓC" />
       <div className={classes.listItem}>
         {vitaminProducts.map((item) => (
           <ProductCard key={item.id} {...item} />
