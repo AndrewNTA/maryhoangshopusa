@@ -4,7 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { formatPrice, genImages } from 'utils';
 import Rating from '@mui/material/Rating';
-import { Spacing } from 'components';
+import { Spacing, SkeletonLoading } from 'components';
 
 import useStyles from './styles';
 import ContactInfo from './ContactInfo';
@@ -45,8 +45,14 @@ function ProductDetails() {
   const price = product?.price;
   const description = product?.description;
   const mainImage = product?.mainImage;
-  const relateImages = useMemo(() => product?.relateImages || [], [product?.relateImages]);
-  const allImage = useMemo(() => mainImage ? [mainImage, ...relateImages] : [], [mainImage, relateImages]);
+  const relateImages = useMemo(
+    () => product?.relateImages || [],
+    [product?.relateImages]
+  );
+  const allImage = useMemo(
+    () => (mainImage ? [mainImage, ...relateImages] : []),
+    [mainImage, relateImages]
+  );
 
   const firstPrice = formatPrice(Number(discountPrice ? discountPrice : price));
   const secondPrice = discountPrice ? formatPrice(Number(price)) : '';
@@ -54,7 +60,7 @@ function ProductDetails() {
   const imageList = useMemo(() => genImages(allImage), [allImage]);
 
   if (!product) {
-    return <div>Loading</div>
+    return <SkeletonLoading noPadding={false} isDouble />;
   }
 
   return (

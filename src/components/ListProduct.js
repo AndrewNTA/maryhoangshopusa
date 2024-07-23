@@ -1,7 +1,7 @@
 import React from 'react';
-import useStyles from 'pages/Home/styles';
-import ProductCard from 'pages/Home/ProductCard';
+import { ProductCard } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
+import useStyles from './styles';
 
 function ListProducts({ products }) {
   const classes = useStyles();
@@ -10,9 +10,8 @@ function ListProducts({ products }) {
   return (
     <div className={classes.container}>
       <div className={classes.listItem}>
-        {products && products.map((item) => (
-          <ProductCard key={item.id} {...item} />
-        ))}
+        {products &&
+          products.map((item) => <ProductCard key={item.id} {...item} />)}
       </div>
     </div>
   );

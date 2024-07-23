@@ -1,11 +1,10 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { Banner, BannerOutline, ProductGroupTitle, Spacing } from 'components';
+import { Banner, BannerOutline, ProductGroupTitle, SkeletonLoading, Spacing } from 'components';
 import useStyles from './styles';
 import { VITAMINS_AND_NUTRITION, groupList } from 'constant';
-import ProductCard from './ProductCard';
-import GroupCard from './GroupCard';
+import { ProductCard, GroupCard } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 import { getSaleoffProducts, getProductsByGroup } from 'utils';
 
@@ -36,6 +35,7 @@ function Home({ products }) {
         {saleoffProducts.map((item) => (
           <ProductCard key={item.id} {...item} />
         ))}
+        <SkeletonLoading noPadding isDouble />
       </div>
       <div className={classes.viewAllContainer}>
         <Button
@@ -59,6 +59,7 @@ function Home({ products }) {
         {vitaminProducts.map((item) => (
           <ProductCard key={item.id} {...item} />
         ))}
+        <SkeletonLoading noPadding isDouble={false} />
       </div>
       <div className={classes.viewAllContainer}>
         <Button

@@ -5,9 +5,8 @@ import Container from '@mui/material/Container';
 
 import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
-import ListProducts from 'pages/ListProducts';
 import ProductDetails from 'pages/ProductDetails';
-import { Menu, Footer } from 'components';
+import { Menu, Footer, ListProducts } from 'components';
 import { useQuery, gql } from '@apollo/client';
 import { isMobileScreen, useCurrentWidth } from 'hooks/useCurrentScreenSize';
 import theme from './theme';

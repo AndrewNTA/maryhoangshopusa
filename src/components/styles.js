@@ -250,6 +250,48 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   // spacing end
+
+  // container start
+  container: {
+    padding: '32px',
+    [theme.breakpoints.down('md')]: {
+      padding: '24px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '16px',
+    },
+  },
+  // container end
+
+  // list item start
+  listItem: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '32px',
+    boxSizing: 'border-box',
+    [theme.breakpoints.down('sm')]: {
+      gap: '16px',
+    },
+    '&>*': {
+      flex: '0 0 calc(25% - 24px)',
+      boxSizing: 'border-box',
+      [theme.breakpoints.down('md')]: {
+        flex: '0 0 calc(50% - 16px)',
+      },
+      [theme.breakpoints.down('sm')]: {
+        flex: '0 0 calc(50% - 8px)',
+      },
+    },
+  },
+  // list item end
+
+  // product card start
+  priceWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+  },
+  // product card end
 }));
 
 export default useStyles;
