@@ -97,7 +97,7 @@ function App() {
           >
             <Routes>
               <Route path="*" element={<NotFound />} />
-              <Route path="/" exact element={<Home products={productList}/>} />
+              <Route path="/" exact element={<Home products={productList} loading={loading}/>} />
               <Route
                 path="/all-products"
                 element={

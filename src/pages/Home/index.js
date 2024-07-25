@@ -1,14 +1,20 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { Banner, BannerOutline, ProductGroupTitle, SkeletonLoading, Spacing } from 'components';
+import {
+  Banner,
+  BannerOutline,
+  ProductGroupTitle,
+  SkeletonLoading,
+  Spacing,
+} from 'components';
 import useStyles from './styles';
 import { THUC_PHAM_CHUC_NANG, groupList } from 'constant';
 import { ProductCard, GroupCard } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 import { getSaleoffProducts, getProductsByGroup } from 'utils';
 
-function Home({ products }) {
+function Home({ products, loading }) {
   const classes = useStyles();
   const navigate = useNavigate();
   useScrollToTop();
@@ -31,12 +37,17 @@ function Home({ products }) {
     <div className={classes.container}>
       <Banner />
       <ProductGroupTitle title="SALEOFF PRODUCTS" />
-      <div className={classes.listItem}>
-        {saleoffProducts.map((item) => (
-          <ProductCard key={item.id} {...item} />
-        ))}
+
+      {loading ? (
         <SkeletonLoading noPadding isDouble />
-      </div>
+      ) : (
+        <div className={classes.listItem}>
+          {saleoffProducts.map((item) => (
+            <ProductCard key={item.id} {...item} />
+          ))}
+        </div>
+      )}
+
       <div className={classes.viewAllContainer}>
         <Button
           variant="contained"
@@ -55,12 +66,15 @@ function Home({ products }) {
       <Spacing />
       <BannerOutline />
       <ProductGroupTitle title="SERUM MỌC TÓC" />
-      <div className={classes.listItem}>
-        {vitaminProducts.map((item) => (
-          <ProductCard key={item.id} {...item} />
-        ))}
+      {loading ? (
         <SkeletonLoading noPadding isDouble={false} />
-      </div>
+      ) : (
+        <div className={classes.listItem}>
+          {vitaminProducts.map((item) => (
+            <ProductCard key={item.id} {...item} />
+          ))}
+        </div>
+      )}
       <div className={classes.viewAllContainer}>
         <Button
           variant="outlined"
