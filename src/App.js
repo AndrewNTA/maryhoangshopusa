@@ -18,6 +18,7 @@ import {
   DAU_GOI,
   MY_PHAM_HAN_QUOC,
   THUC_PHAM_CHUC_NANG,
+  SERUM_MOC_TOC,
 } from 'constant';
 
 const PRODUCTS_QUERY = gql`
@@ -70,6 +71,11 @@ function App() {
 
   const skinCareProducts = useMemo(
     () => getProductsByGroup(productList, MY_PHAM_HAN_QUOC),
+    [productList]
+  );
+
+  const serumProducts = useMemo(
+    () => getProductsByGroup(productList, SERUM_MOC_TOC),
     [productList]
   );
 
@@ -158,6 +164,16 @@ function App() {
                   <ListProducts
                     key="dau-goi"
                     products={hairCareProducts}
+                    loading={loading}
+                  />
+                }
+              />
+              <Route
+                path="/serum-moc-toc"
+                element={
+                  <ListProducts
+                    key="serum-moc-toc"
+                    products={serumProducts}
                     loading={loading}
                   />
                 }
