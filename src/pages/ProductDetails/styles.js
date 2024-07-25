@@ -41,26 +41,18 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.6rem',
     },
   },
-  priceBox: {
-    display: 'flex',
-    gap: 16,
-    alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      gap: 8,
-    },
-  },
-  priceNew: {
+  price: {
     fontWeight: 700,
     fontSize: '2.2rem',
+    marginBottom: '16px',
     color: 'var(--mary--main-color)',
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.4rem',
     },
   },
-  priceOld: {
-    textDecoration: 'line-through',
+  comboPrice: {
+    fontWeight: 600,
     fontSize: '1.6rem',
-    color: '#9E9FA5',
     [theme.breakpoints.down('sm')]: {
       fontSize: '1rem',
     },

@@ -16,10 +16,12 @@ const PRODUCT_QUERY = gql`
       description {
         html
       }
-      discountPrice
       id
       name
       price
+      comboPrice
+      comboNumber
+      unit
       relateImages {
         url
       }
@@ -40,8 +42,10 @@ function ProductDetails() {
     },
   });
   const product = data?.product;
-  const discountPrice = product?.discountPrice;
+  const unit = product?.unit;
   const price = product?.price;
+  const comboPrice = product?.comboPrice;
+  const comboNumber = product?.comboNumber;
   const description = product?.description;
   const mainImage = product?.mainImage;
   const relateImages = useMemo(
@@ -53,8 +57,11 @@ function ProductDetails() {
     [mainImage, relateImages]
   );
 
-  const firstPrice = formatPrice(Number(discountPrice ? discountPrice : price));
-  const secondPrice = discountPrice ? formatPrice(Number(price)) : '';
+  const displayPrice = `${formatPrice(Number(price))} / 1 ${unit}`;
+  const displayComboPrice =
+    comboPrice && comboNumber
+      ? `${formatPrice(Number(comboPrice))} / ${comboNumber} ${unit}`
+      : '';
 
   const imageList = useMemo(() => genImages(allImage), [allImage]);
 
@@ -88,10 +95,8 @@ function ProductDetails() {
             })}
           />
           <Spacing />
-          <div className={classes.priceBox}>
-            <div className={classes.priceNew}>{firstPrice}</div>
-            <div className={classes.priceOld}>{secondPrice}</div>
-          </div>
+          <div className={classes.price}>{displayPrice}</div>
+          <div className={classes.comboPrice}>{displayComboPrice}</div>
           <Spacing />
           <div className={classes.infoMessage}>Cam kết hàng chính hãng</div>
           <div className={classes.contactInfoTitle}>Thông tin liên hệ</div>

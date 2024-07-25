@@ -17,7 +17,7 @@ import {
   GIAM_CAN_DIET,
   DAU_GOI,
   MY_PHAM_HAN_QUOC,
-  THUC_PHAM_CHUC_NANG
+  THUC_PHAM_CHUC_NANG,
 } from 'constant';
 
 const PRODUCTS_QUERY = gql`
@@ -58,7 +58,7 @@ function App() {
     [productList]
   );
 
-  const bodyCareProducts = useMemo(
+  const dietProducts = useMemo(
     () => getProductsByGroup(productList, GIAM_CAN_DIET),
     [productList]
   );
@@ -97,29 +97,49 @@ function App() {
           >
             <Routes>
               <Route path="*" element={<NotFound />} />
-              <Route path="/" exact element={<Home products={productList} loading={loading}/>} />
+              <Route
+                path="/"
+                exact
+                element={<Home products={productList} loading={loading} />}
+              />
               <Route
                 path="/all-products"
                 element={
-                  <ListProducts key="all-products" products={productList} loading={loading} />
+                  <ListProducts
+                    key="all-products"
+                    products={productList}
+                    loading={loading}
+                  />
                 }
               />
               <Route
                 path="/saleoff"
                 element={
-                  <ListProducts key="saleoff" products={saleoffProducts} />
+                  <ListProducts
+                    key="saleoff"
+                    products={saleoffProducts}
+                    loading={loading}
+                  />
                 }
               />
               <Route
                 path="/thuc-pham-chuc-nang"
                 element={
-                  <ListProducts key="thuc-pham-chuc-nang" products={bodyCareProducts} />
+                  <ListProducts
+                    key="thuc-pham-chuc-nang"
+                    products={vitaminProducts}
+                    loading={loading}
+                  />
                 }
               />
               <Route
                 path="/giam-can-diet"
                 element={
-                  <ListProducts key="giam-can-diet" products={hairCareProducts} />
+                  <ListProducts
+                    key="giam-can-diet"
+                    products={dietProducts}
+                    loading={loading}
+                  />
                 }
               />
               <Route
@@ -128,6 +148,7 @@ function App() {
                   <ListProducts
                     key="my-pham-han-quoc"
                     products={skinCareProducts}
+                    loading={loading}
                   />
                 }
               />
@@ -136,7 +157,8 @@ function App() {
                 element={
                   <ListProducts
                     key="dau-goi"
-                    products={vitaminProducts}
+                    products={hairCareProducts}
+                    loading={loading}
                   />
                 }
               />
