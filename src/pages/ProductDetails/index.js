@@ -4,11 +4,10 @@ import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { formatPrice, genImages } from 'utils';
 import Rating from '@mui/material/Rating';
-import { Spacing, SkeletonLoading } from 'components';
-
-import useStyles from './styles';
-import ContactInfo from './ContactInfo';
+import { Spacing } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
+import useStyles from './styles';
+import ContactPaymentInfo from './ContactPaymentInfo';
 
 const PRODUCT_QUERY = gql`
   query Product($id: ID) {
@@ -66,7 +65,7 @@ function ProductDetails() {
   const imageList = useMemo(() => genImages(allImage), [allImage]);
 
   if (!product) {
-    return <SkeletonLoading noPadding={false} isDouble />;
+    return 'Loading';
   }
 
   return (
@@ -99,13 +98,13 @@ function ProductDetails() {
           <div className={classes.comboPrice}>{displayComboPrice}</div>
           <Spacing />
           <div className={classes.infoMessage}>Cam kết hàng chính hãng</div>
-          <div className={classes.contactInfoTitle}>Thông tin liên hệ</div>
-          <ContactInfo />
+          <ContactPaymentInfo />
         </div>
       </div>
       <div className={classes.bottomSection}>
         <div className={classes.title}>Thông tin chi tiết</div>
         <div
+          className={classes.contentDetails}
           dangerouslySetInnerHTML={{
             __html: description?.html ?? '',
           }}

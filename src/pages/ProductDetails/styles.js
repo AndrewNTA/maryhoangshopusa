@@ -75,13 +75,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    fontSize: '1.2rem',
-    fontWeight: 600,
+    fontSize: '1.1rem',
+    fontWeight: 500,
     marginBottom: 24,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
       marginBottom: 16,
     },
+  },
+  contentDetails: {
+    textAlign: 'justify',
   },
 }));
 
