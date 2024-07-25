@@ -1,9 +1,9 @@
-import BodyImage from 'static/images/body-care-img.jpg';
+import DietImage from 'static/images/diet-img.jpg';
 import HairImage from 'static/images/hair-care-img.jpg';
 import SkinImage from 'static/images/skin-care-img.jpg';
 
 const bodyGroup = {
-  imageSrc: BodyImage,
+  imageSrc: DietImage,
   path: '/giam-can-diet',
   groupName: 'Giảm cân (Diet)',
   groupDescription:
@@ -95,12 +95,6 @@ export const paymentItems = [
   'Zelle: Mary Hoang - 678 559 8867',
   'Venmo: Mary Hoang123 - 678 559 8867',
 ];
-
-export const VITAMINS_AND_NUTRITION = 'vitaminsAndNutrition';
-export const BODY_CARE = 'bodyCare';
-export const THUOC_GIAM_CAN = 'thuocGiamCan';
-export const SKIN_CARE_AND_MAKEUP = 'skinCareAndMakeup';
-export const HAIR_CARE = 'hairCare';
 
 export const MY_PHAM_HAN_QUOC = 'my_pham_han_quoc';
 export const THUC_PHAM_CHUC_NANG = 'thuc_pham_chuc_nang';

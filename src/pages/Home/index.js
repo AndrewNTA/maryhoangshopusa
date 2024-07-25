@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { Banner, BannerOutline, ProductGroupTitle, SkeletonLoading, Spacing } from 'components';
 import useStyles from './styles';
-import { VITAMINS_AND_NUTRITION, groupList } from 'constant';
+import { THUC_PHAM_CHUC_NANG, groupList } from 'constant';
 import { ProductCard, GroupCard } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 import { getSaleoffProducts, getProductsByGroup } from 'utils';
@@ -23,7 +23,7 @@ function Home({ products }) {
   );
 
   const vitaminProducts = useMemo(
-    () => getProductsByGroup(products, VITAMINS_AND_NUTRITION).slice(0, 4),
+    () => getProductsByGroup(products, THUC_PHAM_CHUC_NANG).slice(0, 4),
     [products]
   );
 

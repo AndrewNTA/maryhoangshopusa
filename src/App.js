@@ -14,10 +14,10 @@ import './scss/index.scss';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { getProductsByGroup, getSaleoffProducts } from 'utils';
 import {
-  BODY_CARE,
-  HAIR_CARE,
-  SKIN_CARE_AND_MAKEUP,
-  VITAMINS_AND_NUTRITION,
+  GIAM_CAN_DIET,
+  DAU_GOI,
+  MY_PHAM_HAN_QUOC,
+  THUC_PHAM_CHUC_NANG
 } from 'constant';
 
 const PRODUCTS_QUERY = gql`
@@ -41,9 +41,8 @@ export const AppContext = React.createContext({
 });
 
 function App() {
-  // const { data } = useQuery(PRODUCTS_QUERY);
-  // const productList = data?.products ?? null;
-  const productList = null;
+  const { data } = useQuery(PRODUCTS_QUERY);
+  const productList = data?.products ?? null;
   const currentWidth = useCurrentWidth();
   const isMobile = isMobileScreen(currentWidth);
 
@@ -53,22 +52,22 @@ function App() {
   );
 
   const vitaminProducts = useMemo(
-    () => getProductsByGroup(productList, VITAMINS_AND_NUTRITION),
+    () => getProductsByGroup(productList, THUC_PHAM_CHUC_NANG),
     [productList]
   );
 
   const bodyCareProducts = useMemo(
-    () => getProductsByGroup(productList, BODY_CARE),
+    () => getProductsByGroup(productList, GIAM_CAN_DIET),
     [productList]
   );
 
   const hairCareProducts = useMemo(
-    () => getProductsByGroup(productList, HAIR_CARE),
+    () => getProductsByGroup(productList, DAU_GOI),
     [productList]
   );
 
   const skinCareProducts = useMemo(
-    () => getProductsByGroup(productList, SKIN_CARE_AND_MAKEUP),
+    () => getProductsByGroup(productList, MY_PHAM_HAN_QUOC),
     [productList]
   );
 

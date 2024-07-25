@@ -34,13 +34,12 @@ function ProductDetails() {
   const classes = useStyles();
   useScrollToTop();
   const { id } = useParams();
-  // const { data } = useQuery(PRODUCT_QUERY, {
-  //   variables: {
-  //     id,
-  //   },
-  // });
-  // const product = data?.product;
-  const product = null;
+  const { data } = useQuery(PRODUCT_QUERY, {
+    variables: {
+      id,
+    },
+  });
+  const product = data?.product;
   const discountPrice = product?.discountPrice;
   const price = product?.price;
   const description = product?.description;
