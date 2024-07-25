@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contentDetails: {
     textAlign: 'justify',
+    lineHeight: '2rem'
   },
 }));
 
