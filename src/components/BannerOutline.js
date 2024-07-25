@@ -30,7 +30,7 @@ function BannerOutline() {
               },
             })}
           >
-            Thực phẩm chức năng
+            Thực phẩm chức năng, collagen
           </Typography>
           <Typography
             color="var(--mary--main-color)"

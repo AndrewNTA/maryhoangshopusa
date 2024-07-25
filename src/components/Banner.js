@@ -46,7 +46,7 @@ function Banner() {
             Welcome to Mary Hoang Shop USA!
           </Typography>
           <Typography color="white" sx={textStyle}>
-            Chuyên bán mỹ phẩm, dầu gội, giảm cân
+            Chuyên bán mỹ phẩm, dầu gội, giảm cân, collagen
           </Typography>
           <Typography color="white" sx={textStyle}>
             Đảm bảo - Uy tín - Chất lượng
