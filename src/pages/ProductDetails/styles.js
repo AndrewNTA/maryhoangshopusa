@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   productName: {
-    fontSize: '2.2rem',
-    fontWeight: 600,
+    fontSize: '2rem',
+    fontWeight: 500,
+    textTransform: 'uppercase',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.6rem',
+      fontSize: '1.4rem',
     },
   },
   price: {
