@@ -12,7 +12,7 @@ const SkeletonLoading = ({ isDouble, noPadding }) => {
     <div className={noPadding ? null : classes.container}>
       <div className={classes.listItem}>
         {arr.map((item) => (
-          <Box key={item.id}>
+          <Box key={item}>
             <Skeleton variant="rectangular" height={160} />
             <Box sx={{ pt: 0.5 }}>
               <Skeleton />

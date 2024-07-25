@@ -5,24 +5,27 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { formatPrice } from 'utils';
-import useStyles from './styles';
 
 export default function ProductCard({
   id,
   name,
   price,
-  discountPrice,
+  comboPrice,
+  comboNumber,
+  unit,
   mainImage,
 }) {
-  const classes = useStyles();
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
     navigate(path);
   };
 
-  const firstPrice = formatPrice(Number(discountPrice ? discountPrice : price));
-  const secondPrice = discountPrice ? formatPrice(Number(price)) : '';
+  const displayPrice = `${formatPrice(Number(price))} / 1 ${unit}`;
+  const displayComboPrice =
+    comboPrice && comboNumber
+      ? `${formatPrice(Number(comboPrice))} / ${comboNumber} ${unit}`
+      : '';
   return (
     <Card
       sx={{ cursor: 'pointer' }}
@@ -41,44 +44,44 @@ export default function ProductCard({
       <CardContent>
         <Typography
           gutterBottom
-          variant="h5"
+          variant="body2"
           component="div"
           sx={(theme) => ({
+            fontWeight: 500,
+            fontSize: '1.2rem',
+            textTransform: 'uppercase',
             [theme.breakpoints.down('sm')]: {
-              fontSize: '1rem',
+              fontSize: '0.8rem',
             },
           })}
         >
           {name}
         </Typography>
-        <div className={classes.priceWrapper}>
-          <Typography
-            variant="body2"
-            sx={(theme) => ({
-              fontWeight: 600,
-              fontSize: '1.4rem',
-              color: 'var(--mary--main-color)',
-              [theme.breakpoints.down('sm')]: {
-                fontSize: '1rem',
-              },
-            })}
-          >
-            {firstPrice}
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={(theme) => ({
-              textDecoration: 'line-through',
-              fontSize: '1.2rem',
-              color: '#9E9FA5',
-              [theme.breakpoints.down('sm')]: {
-                fontSize: '0.8rem',
-              },
-            })}
-          >
-            {secondPrice}
-          </Typography>
-        </div>
+        <Typography
+          variant="body2"
+          sx={(theme) => ({
+            fontWeight: 600,
+            fontSize: '1.2rem',
+            color: 'var(--mary--main-color)',
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '0.8rem',
+            },
+          })}
+        >
+          {displayPrice}
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={(theme) => ({
+            fontWeight: 600,
+            fontSize: '1.2rem',
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '0.8rem',
+            },
+          })}
+        >
+          {displayComboPrice}
+        </Typography>
       </CardContent>
     </Card>
   );

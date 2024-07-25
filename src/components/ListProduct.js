@@ -1,11 +1,15 @@
 import React from 'react';
-import { ProductCard } from 'components';
+import { ProductCard, SkeletonLoading } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 import useStyles from './styles';
 
-function ListProducts({ products }) {
+function ListProducts({ products, loading }) {
   const classes = useStyles();
   useScrollToTop();
+
+  if (loading) {
+    return <SkeletonLoading noPadding isDouble />;
+  }
 
   return (
     <div className={classes.container}>

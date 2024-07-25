@@ -26,7 +26,9 @@ const PRODUCTS_QUERY = gql`
       id
       name
       price
-      discountPrice
+      comboPrice
+      comboNumber
+      unit
       group
       isSaleOff
       mainImage {
@@ -41,7 +43,7 @@ export const AppContext = React.createContext({
 });
 
 function App() {
-  const { data } = useQuery(PRODUCTS_QUERY);
+  const { data, loading } = useQuery(PRODUCTS_QUERY);
   const productList = data?.products ?? null;
   const currentWidth = useCurrentWidth();
   const isMobile = isMobileScreen(currentWidth);
@@ -99,7 +101,7 @@ function App() {
               <Route
                 path="/all-products"
                 element={
-                  <ListProducts key="all-products" products={productList} />
+                  <ListProducts key="all-products" products={productList} loading={loading} />
                 }
               />
               <Route
