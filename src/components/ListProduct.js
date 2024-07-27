@@ -11,6 +11,10 @@ function ListProducts({ products, loading }) {
     return <SkeletonLoading noPadding isDouble />;
   }
 
+  if (!products || products?.length === 0) {
+    return <div className={classes.container}>Chưa có sản phẩm!!!</div>
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes.listItem}>
