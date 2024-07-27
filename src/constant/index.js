@@ -24,7 +24,7 @@ const hairGroup = {
 const skinGroup = {
   imageSrc: SkinImage,
   path: '/my-pham-han-quoc',
-  groupName: 'Mỹ phẩm Hàn Quốc, Nhật Bản',
+  groupName: 'Mỹ phẩm Hàn Quốc, Nhật Bản, Thuỵ Sĩ',
   groupDescription:
     'Bán mỹ phẩm Hàn Quốc, Nhật Bản các sản phẩm skincare và makeup, cam kết chính hãng...',
 };
@@ -124,7 +124,7 @@ export const footerCategoryItems = [
   {
     id: 'my-pham-han-quoc',
     path: '/my-pham-han-quoc',
-    label: 'Mỹ phẩm Hàn Quốc, Nhật Bản',
+    label: 'Mỹ phẩm Hàn Quốc, Nhật Bản, Thuỵ Sĩ',
   },
   {
     id: 'kem-dieu-tri-nam',
@@ -134,7 +134,7 @@ export const footerCategoryItems = [
   {
     id: 'thuc-pham-chuc-nang',
     path: '/thuc-pham-chuc-nang',
-    label: 'Thực phẩm chức năng',
+    label: 'Thực phẩm chức năng, COLLAGEN uống',
   },
   {
     id: 'giam-can-diet',

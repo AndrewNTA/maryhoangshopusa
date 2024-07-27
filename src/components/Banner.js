@@ -46,10 +46,12 @@ function Banner() {
             Welcome to Mary Hoang Shop USA!
           </Typography>
           <Typography color="white" sx={textStyle}>
-            Chuyên bán mỹ phẩm, dầu gội, giảm cân, collagen
+            Chuyên bán: mỹ phẩm Hàn Quốc - Nhật Bản - Thuỵ Sĩ - Weilaiya -
+            Elvawell, dầu gội chống rụng tóc và serum mọc tóc, thực phẩm chức
+            năng, collagen uống, giảm cân,...
           </Typography>
           <Typography color="white" sx={textStyle}>
-            Đảm bảo - Uy tín - Chất lượng
+            Cam kết hàng chính hãng 100%
           </Typography>
           <Spacing />
           <Button
