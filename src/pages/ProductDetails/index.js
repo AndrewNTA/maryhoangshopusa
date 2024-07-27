@@ -21,6 +21,7 @@ const PRODUCT_QUERY = gql`
       comboPrice
       comboNumber
       unit
+      unitNote
       relateImages {
         url
       }
@@ -42,6 +43,7 @@ function ProductDetails() {
   });
   const product = data?.product;
   const unit = product?.unit;
+  const unitNote = product?.unitNote;
   const price = product?.price;
   const comboPrice = product?.comboPrice;
   const comboNumber = product?.comboNumber;
@@ -96,6 +98,7 @@ function ProductDetails() {
           <Spacing />
           <div className={classes.price}>{displayPrice}</div>
           <div className={classes.comboPrice}>{displayComboPrice}</div>
+          {unitNote && <div className={classes.comboPrice}>{unitNote}</div>}
           <Spacing />
           <div className={classes.infoMessage}>Cam kết hàng chính hãng</div>
           <ContactPaymentInfo />
