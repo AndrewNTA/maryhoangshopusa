@@ -30,6 +30,7 @@ const PRODUCTS_QUERY = gql`
       comboPrice
       comboNumber
       unit
+      unitNote
       group
       isSaleOff
       mainImage {

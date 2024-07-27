@@ -13,6 +13,7 @@ export default function ProductCard({
   comboPrice,
   comboNumber,
   unit,
+  unitNote,
   mainImage,
 }) {
   const navigate = useNavigate();
@@ -82,6 +83,20 @@ export default function ProductCard({
         >
           {displayComboPrice}
         </Typography>
+        {unitNote && (
+          <Typography
+            variant="body2"
+            sx={(theme) => ({
+              fontWeight: 600,
+              fontSize: '1.2rem',
+              [theme.breakpoints.down('sm')]: {
+                fontSize: '0.8rem',
+              },
+            })}
+          >
+            {unitNote}
+          </Typography>
+        )}
       </CardContent>
     </Card>
   );
