@@ -9,7 +9,7 @@ import {
   Spacing,
 } from 'components';
 import useStyles from './styles';
-import { THUC_PHAM_CHUC_NANG, groupList } from 'constant';
+import { THUC_PHAM_CHUC_NANG, groupList, groupList1 } from 'constant';
 import { ProductCard, GroupCard } from 'components';
 import { useScrollToTop } from 'hooks/useScrollToTop';
 import { getSaleoffProducts, getProductsByGroup } from 'utils';
@@ -84,6 +84,11 @@ function Home({ products, loading }) {
         >
           View all
         </Button>
+      </div>
+      <div className={classes.listGroup}>
+        {groupList1.map((group) => (
+          <GroupCard key={group.groupName} {...group} />
+        ))}
       </div>
     </div>
   );

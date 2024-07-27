@@ -1,6 +1,9 @@
 import DietImage from 'static/images/diet-img.jpg';
 import HairImage from 'static/images/hair-care-img.jpg';
 import SkinImage from 'static/images/skin-care-img.jpg';
+import SerumImage from 'static/images/serum-img.jpg';
+import KemNamImage from 'static/images/kem-nam-img.jpg';
+import KoreaImage from 'static/images/korea-img.jpg';
 
 const bodyGroup = {
   imageSrc: DietImage,
@@ -27,6 +30,32 @@ const skinGroup = {
 };
 
 export const groupList = [bodyGroup, hairGroup, skinGroup];
+
+const kemNamGroup = {
+  imageSrc: KemNamImage,
+  path: '/kem-dieu-tri-nam',
+  groupName: 'Kem điều trị nám',
+  groupDescription:
+    'Chuyên các sản phẩm kem điều trị nám, đảm bảo uy tín chất lượng...',
+};
+
+const serumGroup = {
+  imageSrc: SerumImage,
+  path: '/serum-moc-toc',
+  groupName: 'Serum mọc tóc',
+  groupDescription:
+    'Cung cấp các sản phẩm serum mọc tóc giúp điều trị tóc thưa, tóc rụng nhiều...',
+};
+
+const koreaGroup = {
+  imageSrc: KoreaImage,
+  path: '/korea-weilaiya-elvawell',
+  groupName: 'Korea - Weilaiya - Elvawell',
+  groupDescription:
+    'Bán các sản phẩm chính hãng Korea - Weilaiya - Elvawell, cam kết chính hãng...',
+};
+
+export const groupList1 = [kemNamGroup, serumGroup, koreaGroup];
 
 export const WEBSITE_NAME = 'MARY HOANG SHOP USA';
 export const FREE_SHIPPING_MESSAGE = 'FREE SHIPPING FOR ALL STATES';
