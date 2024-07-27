@@ -3,14 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { menuItems, contactItems, paymentItems } from 'constant';
+import { footerCategoryItems, contactItems, paymentItems } from 'constant';
 import useStyles from './styles';
 import { Typography } from '@mui/material';
 
 function Footer() {
   const classes = useStyles();
   const navigate = useNavigate();
-  const listItem = menuItems.slice(1, 8);
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -23,7 +22,7 @@ function Footer() {
           <Typography variant="h6" mt={1}>
             Danh mục sản phẩm:
           </Typography>
-          {listItem.map((item) => (
+          {footerCategoryItems.map((item) => (
             <ListItem key={item.id}>
               <ListItemText
                 primary={item.label}

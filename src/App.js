@@ -19,11 +19,13 @@ import {
   MY_PHAM_HAN_QUOC,
   THUC_PHAM_CHUC_NANG,
   SERUM_MOC_TOC,
+  KEM_DIEU_TRI_NAM,
+  KOREA_WEILAIYA_ELVAWELL,
 } from 'constant';
 
 const PRODUCTS_QUERY = gql`
   query Products {
-    products(first: 20) {
+    products(first: 100) {
       id
       name
       price
@@ -77,6 +79,16 @@ function App() {
 
   const serumProducts = useMemo(
     () => getProductsByGroup(productList, SERUM_MOC_TOC),
+    [productList]
+  );
+
+  const kemNamProducts = useMemo(
+    () => getProductsByGroup(productList, KEM_DIEU_TRI_NAM),
+    [productList]
+  );
+
+  const koreaProducts = useMemo(
+    () => getProductsByGroup(productList, KOREA_WEILAIYA_ELVAWELL),
     [productList]
   );
 
@@ -175,6 +187,26 @@ function App() {
                   <ListProducts
                     key="serum-moc-toc"
                     products={serumProducts}
+                    loading={loading}
+                  />
+                }
+              />
+              <Route
+                path="/kem-dieu-tri-nam"
+                element={
+                  <ListProducts
+                    key="kem-dieu-tri-nam"
+                    products={kemNamProducts}
+                    loading={loading}
+                  />
+                }
+              />
+              <Route
+                path="/korea-weilaiya-elvawell"
+                element={
+                  <ListProducts
+                    key="korea-weilaiya-elvawell"
+                    products={koreaProducts}
                     loading={loading}
                   />
                 }

@@ -13,17 +13,17 @@ const bodyGroup = {
 const hairGroup = {
   imageSrc: HairImage,
   path: '/dau-goi',
-  groupName: 'Dầu gội',
+  groupName: 'Dầu gội chống rụng tóc',
   groupDescription:
-    'Cung cấp các sản phẩm dầu gội, dầu xả phù hợp với nhiều loại tóc...',
+    'Cung cấp các sản phẩm dầu gội, dầu xả chống rụng tóc phù hợp với nhiều loại da đầu...',
 };
 
 const skinGroup = {
   imageSrc: SkinImage,
   path: '/my-pham-han-quoc',
-  groupName: 'Mỹ phẩm Hàn Quốc',
+  groupName: 'Mỹ phẩm Hàn Quốc, Nhật Bản',
   groupDescription:
-    'Bán mỹ phẩm Hàn Quốc, các sản phẩm skincare và makeup, cam kết chính hãng...',
+    'Bán mỹ phẩm Hàn Quốc, Nhật Bản các sản phẩm skincare và makeup, cam kết chính hãng...',
 };
 
 export const groupList = [bodyGroup, hairGroup, skinGroup];
@@ -45,7 +45,7 @@ export const menuItems = [
   {
     id: 'my-pham-han-quoc',
     path: '/my-pham-han-quoc',
-    label: 'Mỹ phẩm Hàn Quốc',
+    label: 'Mỹ phẩm',
   },
   {
     id: 'thuc-pham-chuc-nang',
@@ -55,7 +55,7 @@ export const menuItems = [
   {
     id: 'giam-can-diet',
     path: '/giam-can-diet',
-    label: 'Giảm cân (Diet)',
+    label: 'Giảm cân (diet)',
   },
   {
     id: 'dau-goi',
@@ -75,7 +75,7 @@ export const menuItems = [
 ];
 
 export const contactItems = [
-  { label: 'Phone: 678 559 8867', value: 'tel:+16785598867' },
+  { label: 'Phone: 678 559 8867 (Mary Hoang)', value: 'tel:+16785598867' },
   { label: 'Zalo: Mary Hoang', value: 'tel:+16785598867' },
   {
     label: 'Facebook: Mary Hoang',
@@ -91,9 +91,47 @@ export const contactItems = [
   },
 ];
 
+export const footerCategoryItems = [
+  {
+    id: 'my-pham-han-quoc',
+    path: '/my-pham-han-quoc',
+    label: 'Mỹ phẩm Hàn Quốc, Nhật Bản',
+  },
+  {
+    id: 'kem-dieu-tri-nam',
+    path: '/kem-dieu-tri-nam',
+    label: 'Kem điều trị nám',
+  },
+  {
+    id: 'thuc-pham-chuc-nang',
+    path: '/thuc-pham-chuc-nang',
+    label: 'Thực phẩm chức năng',
+  },
+  {
+    id: 'giam-can-diet',
+    path: '/giam-can-diet',
+    label: 'Giảm cân (diet)',
+  },
+  {
+    id: 'dau-goi',
+    path: '/dau-goi',
+    label: 'Dầu gội chống rụng tóc',
+  },
+  {
+    id: 'serum-moc-toc',
+    path: '/serum-moc-toc',
+    label: 'Serum mọc tóc',
+  },
+  {
+    id: 'korea-weilaiya-elvawell',
+    path: '/korea-weilaiya-elvawell',
+    label: 'Korea - Weilaiya - Elvawell',
+  },
+];
+
 export const paymentItems = [
-  'Zelle: Mary Hoang - 678 559 8867',
-  'Venmo: Mary Hoang123 - 678 559 8867',
+  'Zelle: Mary Hoang LLC - 678 559 8867',
+  'Venmo: Mary Hoang123',
 ];
 
 export const MY_PHAM_HAN_QUOC = 'my_pham_han_quoc';
@@ -101,3 +139,5 @@ export const THUC_PHAM_CHUC_NANG = 'thuc_pham_chuc_nang';
 export const GIAM_CAN_DIET = 'giam_can_diet';
 export const DAU_GOI = 'dau_goi';
 export const SERUM_MOC_TOC = 'serum_moc_toc';
+export const KEM_DIEU_TRI_NAM = 'kem-dieu-tri-nam';
+export const KOREA_WEILAIYA_ELVAWELL = 'korea-weilaiya-elvawell';

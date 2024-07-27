@@ -10,7 +10,7 @@ import useStyles from './styles';
 const contactList = [
   {
     icon: <PhoneIcon color="primary" />,
-    label: 'Inbox/Call: 678 559 8867',
+    label: 'Inbox/Call: 678 559 8867 (Mary Hoang)',
   },
   {
     icon: <MessageIcon color="primary" />,
@@ -25,11 +25,11 @@ const contactList = [
 const paymentList = [
   {
     icon: <PaymentsIcon color="primary" />,
-    label: 'Zelle: Mary Hoang - 678 559 8867',
+    label: 'Zelle: Mary Hoang LLC - 678 559 8867',
   },
   {
     icon: <LocalAtmIcon color="primary" />,
-    label: 'Venmo: Mary Hoang123 - 678 559 8867',
+    label: 'Venmo: Mary Hoang123',
   },
 ];
 
