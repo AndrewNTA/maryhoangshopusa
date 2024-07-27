@@ -231,6 +231,9 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     textDecoration: 'none',
     margin: '4px 0',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
     '&:hover': {
       textDecoration: 'underline',
       textUnderlineOffset: '.3rem',

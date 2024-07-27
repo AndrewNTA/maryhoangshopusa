@@ -52,7 +52,7 @@ export default function ProductCard({
             fontSize: '1.2rem',
             textTransform: 'uppercase',
             [theme.breakpoints.down('sm')]: {
-              fontSize: '0.8rem',
+              fontSize: '1rem',
             },
           })}
         >
@@ -65,7 +65,7 @@ export default function ProductCard({
             fontSize: '1.2rem',
             color: 'var(--mary--main-color)',
             [theme.breakpoints.down('sm')]: {
-              fontSize: '0.8rem',
+              fontSize: '1rem',
             },
           })}
         >
@@ -77,7 +77,7 @@ export default function ProductCard({
             fontWeight: 600,
             fontSize: '1.2rem',
             [theme.breakpoints.down('sm')]: {
-              fontSize: '0.8rem',
+              fontSize: '1rem',
             },
           })}
         >
