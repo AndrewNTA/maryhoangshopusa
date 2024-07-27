@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Image from 'static/images/banner-img.jpg';
+import Image from 'static/images/bg-img.jpg';
 import useStyles from './styles';
 import Spacing from './Spacing';
 
