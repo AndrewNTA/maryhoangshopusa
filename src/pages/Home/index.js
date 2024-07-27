@@ -65,7 +65,7 @@ function Home({ products, loading }) {
       </div>
       <Spacing />
       <BannerOutline />
-      <ProductGroupTitle title="SERUM MỌC TÓC" />
+      <ProductGroupTitle title="THỰC PHẨM CHỨC NĂNG" />
       {loading ? (
         <SkeletonLoading noPadding isDouble={false} />
       ) : (
