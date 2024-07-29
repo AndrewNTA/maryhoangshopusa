@@ -21,10 +21,12 @@ const headingStyle = (theme) => ({
 const textStyle = (theme) => ({
   fontSize: '1.5rem',
   fontWeight: 500,
+  padding: '0 16px',
   [theme.breakpoints.down('md')]: {
     fontSize: '1.2rem',
   },
   [theme.breakpoints.down('sm')]: {
+    padding: 0,
     fontSize: '1rem',
   },
 });

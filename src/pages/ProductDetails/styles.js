@@ -85,7 +85,19 @@ const useStyles = makeStyles((theme) => ({
   },
   contentDetails: {
     textAlign: 'justify',
-    lineHeight: '2rem'
+    lineHeight: '2rem',
+  },
+  linkItem: {
+    color: 'var(--mary--black-85)',
+    textDecoration: 'none',
+    margin: '4px 0',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
+    '&:hover': {
+      textDecoration: 'underline',
+      textUnderlineOffset: '.3rem',
+    },
   },
 }));
 
