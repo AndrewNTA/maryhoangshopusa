@@ -104,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
   resultNameItem: {
     fontSize: '1rem',
     cursor: 'pointer',
+    textTransform: 'uppercase',
     '&:hover': {
       color: 'var(--mary--main-color)',
       textDecoration: 'underline',
