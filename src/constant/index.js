@@ -134,7 +134,7 @@ export const footerCategoryItems = [
   {
     id: 'thuc-pham-chuc-nang',
     path: '/thuc-pham-chuc-nang',
-    label: 'Thực phẩm chức năng, COLLAGEN uống',
+    label: 'Thực phẩm chức năng, COLLAGEN',
   },
   {
     id: 'giam-can-diet',
