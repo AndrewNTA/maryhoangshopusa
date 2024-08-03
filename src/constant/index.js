@@ -105,7 +105,7 @@ export const menuItems = [
 
 export const contactItems = [
   { label: 'Phone: 678 559 8867 (Mary Hoang)', value: 'tel:+16785598867' },
-  { label: 'Zalo: Mary Hoang', value: 'tel:+16785598867' },
+  { label: 'Zalo: Mary Hoang', value: 'https://zalo.me/16785598867' },
   {
     label: 'Facebook: Mary Hoang',
     value: 'https://www.facebook.com/mary.hoang.14224',

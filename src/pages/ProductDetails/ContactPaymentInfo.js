@@ -16,7 +16,7 @@ const contactList = [
   {
     icon: <MessageIcon color="primary" />,
     label: 'Zalo: Mary Hoang 678 559 8867',
-    value: 'tel:+16785598867',
+    value: 'https://zalo.me/16785598867',
   },
   {
     icon: <FacebookIcon color="primary" />,
